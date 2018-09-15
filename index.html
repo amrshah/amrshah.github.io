@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,8 +30,14 @@ quote, .quote {
 	margin: 1px;
 	background-color: #073656a8;
 	font-size: 12px;
-	float: left;
+	
 	z-index: 10000;
+}
+.left{
+float: left;
+}
+.right{
+float: right;
 }
 </style>
 <link rel="stylesheet" href="assets/css/animate.min.css">
@@ -46,30 +53,66 @@ quote, .quote {
 				<h1>Ali Raza</h1>
 				<h7> a.k.a amrshah</h7>
 
-				<div id="amrshah">
+				<div id="amrshah">					
 					<div class="line">
-						<div data-x="160" class="small square el">A</div>
+						<div data-x="160" class="small square el left">S</div>
 					</div>
 					<div class="line">
-						<div data-x="80" class="small square el">m</div>
+						<div data-x="80" class="small square el left">i</div>
 					</div>
 					<div class="line">
-						<div data-x="250" class="small square el">r</div>
+						<div data-x="250" class="small square el left">n</div>
 					</div>
 					<div class="line">
-						<div data-x="250" class="small square el">S</div>
+						<div data-x="250" class="small square el left">g</div>
 					</div>
 					<div class="line">
-						<div data-x="250" class="small square el">h</div>
+						<div data-x="250" class="small square el left">u</div>
 					</div>
 					<div class="line">
-						<div data-x="250" class="small square el">a</div>
+						<div data-x="250" class="small square el left">l</div>
 					</div>
 					<div class="line">
-						<div data-x="250" class="small square el">h</div>
+						<div data-x="250" class="small square el left">a</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el left">r</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el left">i</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el left">t</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el left">y</div>
+					</div>
+					<!-- strikes -->
+					<div class="line">
+						<div data-x="160" class="small square el"></div>
+					</div>
+					<div class="line">
+						<div data-x="80" class="small square el right">s</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el right">e</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el right">k</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el right">i</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el right">r</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el right">t</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el right">S</div>
 					</div>
 				</div>
-
 			</div>
 			<div class="w3-padding-64">
 				<a href="#"
@@ -391,30 +434,39 @@ quote, .quote {
 	</footer>
 
 	<script>
+	var body = document.body,
+    html = document.documentElement;
 
-	var functionBasedPropVal = anime({
+	var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+	var amrshah = anime({
 		  targets: '#amrshah .el',
 		  translateX: function(el, i) {
-		    return ((Math.random() * 0.5) + 1) +(150 * i) + el.getAttribute('data-x'); //;
+		    return ((Math.random() * 10+i) + 1) + (150 * i) + el.getAttribute('data-x'); //;
 		  },
 		  translateY: function(el, i) {
-		    return Math.floor((Math.random() * 1000) + 1) + (-10 * i);
+		    return Math.floor((Math.random() * 1000) + 10) + (-10 * i);
 		  },
 		  scale: function(el, i, l) {
-		    return (l - i) + .15;
+		    return (l - i) * 0.3/2;
 		  },
 		  rotate: function() { return anime.random(-360, 360); },
-		  duration: function() { return anime.random(1200, 3800); },
-		  duration: function() { return anime.random(800, 2000); },
-		  delay: function() { return anime.random(0, 2000); },
+		  duration: function() { return anime.random(400, 1000); },
+		  duration: function() { return anime.random(600, 1000); },
+		  delay: function() { return anime.random(0, 3000); },
 		  direction: 'alternate',
 		  easing: 'easeOutExpo',
 		  /*complete: function() {
-			  window.setInterval(anime, 500);
+			  amrshah.pause();
 			},*/
 		  
 		  loop: true
 		});
+	amrshah.update = function(anim) {
+		  if (!anim.completed) {
+			  //setInterval(amrshah.play(), 1000)
+		  }
+		}
 var playPause = anime({
 	  targets: '.w3-half .w3-button',
 	  translateX: 5, translateY: 5,
