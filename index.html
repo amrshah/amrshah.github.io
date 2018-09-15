@@ -1,303 +1,434 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>Code is Poetry</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
-quote, .quote
-{
+quote, .quote {
 	margin: 40px;
 	font-style: italic;
-	
 	color: #fff;
 }
+
+#functionBasedPropVal
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+.shadow {
+	position: absolute;
+	opacity: .2;
+}
+
+.small {
+	width: 18px;
+	height: 18px;
+}
+
+.square, .circle {
+	pointer-events: none;
+	position: relative;
+	width: 28px;
+	height: 28px;
+	margin: 1px;
+	background-color: #073656a8;
+	font-size: 12px;
+	float: left;
+	z-index: 10000;
+}
 </style>
-<body class="w3-content" style="max-width:1300px">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+<script src="assets/js/anime.min.js"></script>
+</head>
+<body class="w3-content" style="max-width: 1300px">
 
-<!-- First Grid: Logo & About -->
-<div class="w3-row">
-  <div class="w3-half w3-black w3-container w3-center" style="min-height:690px">
-    <div class="w3-padding-64">
-      <h1>Ali Raza</h1>
-      <h7> a.k.a amrshah</h7>
-    </div>
-    <div class="w3-padding-64">
-      <a href="#" class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Home</a>
-      <a href="#work" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">My Work</a>
-      <a href="#work" class="w3-button w3-black w3-block w3-hover-dark-grey w3-padding-16">Resume</a>
-      <a href="#recent_projects" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">Recent Projects</a>
-      <a href="#contact" class="w3-button w3-black w3-block w3-hover-brown w3-padding-16">Contact</a>
-    </div>
-    <div class="quote">
-      		<quote>Coming back from what was a Serenity or a utopia? (you may call it what you please) somewhere on Earth or Sky? I name it "Singularity Strikes!"</quote>
-      		<br>~Ali~
-      	</div>
-  </div>
-  <div class="w3-half w3-blue-grey w3-container" style="min-height:720px">
-    <div class="w3-padding-64 w3-center">
-      <h1>About Me</h1>
-      <img src="assets/images/amrshah.jpg" class="w3-margin w3-circle" alt="amrshah" style="width:50%">
-      <div class="w3-left-align w3-padding-large">
-      	
-      	<br />
-      	<p>I am a programmer & programming enthusiast. I love to learn new frameworks and technologies.</p>
-      	<p>At the moment I am more inclined towards creating tools for assisting development tasks than direct coding</p>
-        <p>Want to know more?? Ask me and I'll...</p>
-        <br />
-      </div>
-    </div>
-  </div>
-</div>
+	<!-- First Grid: Logo & About -->
+	<div id="anim" class="w3-row">
+		<div class="w3-half w3-black w3-container w3-center"
+			style="min-height: 690px">
+			<div class="w3-padding-64">
+				<h1>Ali Raza</h1>
+				<h7> a.k.a amrshah</h7>
 
-<!-- Second Grid: Work & Resume -->
-<div class="w3-row">
-  <div class="w3-half w3-light-grey w3-center" style="min-height:800px" id="work">
-    <div class="w3-padding-64">
-      <h2>My Education & Work</h2>
-      <p>..it all started in 2001 with C/C++...</p>
-    </div>
-    <div class="w3-row">
-      <div class="w3-half">
-        <img src="assets/images/sts.png" style="width:100%">
-      </div>
-      <div class="w3-half">
-        <img src="assets/images/hhcs.png" style="width:100%">
-      </div>    
-    </div>
-    <div class="w3-row w3-hide-small">
-      
-      <div class="w3-half">
-        <img src="assets/images/visa-consultant.png" style="width:100%">
-      </div>
-      <div class="w3-half">
-        <img src="assets/images/rhyw.png" style="width:100%">
-      </div>
-    </div>
+				<div id="functionBasedPropVal">
+					<div class="line">
+						<div data-x="160" class="small square el">A</div>
+					</div>
+					<div class="line">
+						<div data-x="80" class="small square el">m</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el">r</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el">S</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el">h</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el">a</div>
+					</div>
+					<div class="line">
+						<div data-x="250" class="small square el">h</div>
+					</div>
+				</div>
 
-    <div class="w3-row w3-hide-small">
-      
-      <div class="w3-half w3-center">
-        <img src="assets/images/awsome.jpg" style="width:100%">
-      </div>
-    </div><br>
-    <p>Just call me awesome.</p>
-  </div>
-  <div class="w3-half w3-indigo w3-container" style="min-height:800px">
-    <div class="w3-padding-64 w3-center">
-      <h2>Resume</h2>
-      <p>A draft from my CV</p>
-      <div class="w3-container w3-responsive">
-        <table class="w3-table">
-          <tr>
-            <th>Year</th>
-            <th>Title</th>
-            <th>Where</th>
-          </tr>
-          <tr class="w3-white">
-            <td>2012-present</td>
-            <td>Half missing</td>
-            <td>In the Serenity or a utopia somewhere on Earth or Sky? I call it "Singularity Strikes!" </td>
-          </tr>
-          <tr class="w3-white">
-            <td>2012-present</td>
-            <td>Freelance Consultant</td>
-            <td>Earth</td>
-          </tr>
-          <tr>
-            <td>2010-2012</td>
-            <td>Started working as freelancer</td>
-            <td>vworker & freelancer</td>
-          </tr>
-          <tr class="w3-white">
-            <td>2008-2010</td>
-            <td>Software Engineer @ Sofnix Pvt. Ltd for Objective Systems Pty AU</td>
-            <td>Islamabad, PK</td>
-          </tr>
-          <tr>
-            <td>2005-2008</td>
-            <td>Degree in Master of Computer Science</td>
-            <td>CUST(MAJU), PK</td>
-          </tr>
-          <tr class="w3-white">
-            <td>2002-2005</td>
-            <td>Kept falling in love with C/C++ and programming</td>
-            <td>My bedroom, RWP, PK</td>
-          </tr>
-          <tr class="w3-hide-medium">
-            <td>2000-2002</td>
-            <td>PGHND in Computer Science</td>
-            <td>NISTE ISB, PK</td>
-          </tr>
-          <tr class="w3-white">
-            <td>1999-2000</td>
-            <td>Degree in Bachelors of Commerce</td>
-            <td>PCC (PU) ISB, PK</td>
-          </tr>
-		<tr class="w3-hide-medium">
-            <td>1997-1998</td>
-            <td>Inter in Pre-Engg.</td>
-            <td>F.G. College Mangla Cantt, Mangla, PK<br />
-            	F.G. Quaid-e-Azam College, RWP Cantt., PK</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
+			</div>
+			<div class="w3-padding-64">
+				<a href="#"
+					class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Home</a>
+				<a href="#work"
+					class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">My
+					Work</a> <a href="#work"
+					class="w3-button w3-black w3-block w3-hover-dark-grey w3-padding-16">Resume</a>
+				<a href="#recent_projects"
+					class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">Recent
+					Projects</a> <a href="#contact"
+					class="w3-button w3-black w3-block w3-hover-brown w3-padding-16">Contact</a>
+			</div>
+			<div class="quote">
+				<quote>Coming back from what was a Serenity or a utopia?
+				(you may call it what you please) somewhere on Earth or Sky? I name
+				it "Singularity Strikes!"</quote>
+				<br>~Ali~
+			</div>
+		</div>
+		<div class="w3-half w3-blue-grey w3-container"
+			style="min-height: 720px">
+			<div class="w3-padding-64 w3-center">
+				<h1>About Me</h1>
+				<img src="assets/images/amrshah.jpg" class="w3-margin w3-circle"
+					alt="amrshah" style="width: 50%">
+				<div class="w3-left-align w3-padding-large">
 
-<!-- Grid: Swing By & Contact -->
-<div class="w3-row" id="recent_projects">
-	<div class="w3-light-blue w3-container" style="min-height:700px">
-    <div class="w3-padding-64">
-      <h1>Recent Projects</h1>
-    
-    <div class="w3-container w3-responsive">
-        <table class="w3-table">
-          <tr>
-            <th>Year</th>
-            <th>Project Name</th>
-            <th>Lang/Tech/Tools</th>
-            <th>For</th>
-          </tr>
-          <tr class="w3-white">
-            <td>2018</td>
-            <td>Visa Consultant Website & CMS</td>
-            <td>Php, Codeigniter, MySQL</td>
-            <td>a friend at Liimra Software</td>
-          </tr>
-          <tr>
-            <td>2018</td>
-            <td>Online Support Ticket System</td>
-            <td>Php, Laravel, MySQL</td>
-            <td>a friend at Liimra Software</td>
-          </tr>
-          <tr class="w3-white">
-            <td>2018</td>
-            <td><a href="hhcsonline.org" target="_blank">Helping Hands Caring Souls Website</a></td>
-            <td>Php, Wordpress, MySQL</td>
-            <td>HHCS</td>
-          </tr>
-          <tr>
-            <td>2017</td>
-            <td><a href="http://roohaniyat.com" target="_blank">Rohaaniyat.com Website</a></td>
-            <td>Php, Wordpress, MySQL</td>
-            <td>Idaara-e-Faizan-e-Roohania</td>
-          </tr>
-          <tr class="w3-white">
-            <td>2012-2013</td>
-            <td><a href="#" target="_blank">AdamG Art Gallery/Website</a></td>
-            <td>Php, Codeigniter, MySQL</td>
-            <td>The Artist</td>
-          </tr>
-          <tr>
-            <td>2012-2013</td>
-            <td><a href="#" target="_blank">Intelligent Workout Plan Generator</a></td>
-            <td>PHP, MySQL</td>
-            <td><a href="http://www.dynamicsportsacademy.com/">Dynamic Sports Academy</a></td>
-          </tr>
-          <tr class="w3-white">
-            <td>2011-2012</td>
-            <td><a href="https://www.ttnc.co.uk/" target="_blank">Anymenu Statistics with TTNC UK API Integration</a></td>
-            <td>PHP, MySQL</td>
-            <td>The Client</td>
-          </tr>
-          <tr>
-            <td>2011</td>
-            <td><a href="#" target="_blank">Servers Health Monitor</a></td>
-            <td>PHP, MySQL</td>
-            <td><a href="#">The Client</a></td>
-          </tr>
-        <tr class="w3-white">
-            <td>2008-2010</td>
-            <td><a href="#" target="_blank">ASP.NET Dev Tools: Layered Application Generator</a></td>
-            <td>C#, ASP.NET, MS SQL Server, ASP.NET Webservices</td>
-            <td>For my personal use to acheive DRY principle while working at: <a href="http://www.readhowyouwant.com/">Sofnix/Objective Systems Pty AU</a></td>
-          </tr>
-		<tr>
-            <td>2008-2010</td>
-            <td><a href="https://checkout.readhowyouwant.com" target="_blank">Paypal Payments Pro Integration</a></td>
-            <td>C#, ASP.NET, MS SQL Server, ASP.NET Webservices</td>
-            <td><a href="http://www.readhowyouwant.com/">Sofnix/Objective Systems Pty AU</a></td>
-          </tr>
-          
-		<tr class="w3-white">
-            <td>2008-2010</td>
-            <td><a href="http://www.readhowyouwant.com" target="_blank">ReadHowYouWant.com Website</a></td>
-            <td>C#, ASP.NET/MS SQl Server</td>
-            <td><a href="#">Sofnix/Objective Systems Pty. AU</a></td>
-          </tr>
-          
-		<tr>
-            <td>2008-2010</td>
-            <td><a href="#" target="_blank">Amazon Book Price Calculation Utility</a></td>
-            <td>C#, ASP.NET, MS SQL Server, AWS, ECS</td>
-            <td><a href="http://www.readhowyouwant.com/">Sofnix/Objective Systems Pty AU</a></td>
-          </tr>
-         <tr class="w3-white">
-            <td>2008-2010</td>
-            <td><a href="#" target="_blank">Publishers & Authors Websites</a></td>
-            <td>C#, ASP.NET, MS SQL Server</td>
-            <td><a href="http://www.readhowyouwant.com/">Sofnix/Objective Systems Pty AU</a></td>
-          </tr>
-          <tr>
-            <td>2008-2010</td>
-            <td><a href="#" target="_blank">DITS (Data Inception, Tracking System) for Book Production process</a></td>
-            <td>C#, ASP.NET, MS SQL Server, ASP.NET Webservices</td>
-            <td><a href="http://www.readhowyouwant.com/">Sofnix/Objective Systems Pty AU</a></td>
-          </tr>
-		<tr class="w3-white">
-            <td>2008-2010</td>
-            <td><a href="#" target="_blank">PMP (Pending mails Processor)</a></td>
-            <td>C#, ASP.NET, Windows Services, ASP.NET Webservices</td>
-            <td><a href="http://www.readhowyouwant.com/">Sofnix/Objective Systems Pty AU</a></td>
-          </tr>
+					<br />
+					<p>I am a programmer & programming enthusiast. I love to learn
+						new frameworks and technologies.</p>
+					<p>At the moment I am more inclined towards creating tools for
+						assisting development tasks than direct coding</p>
+					<p>Want to know more?? Ask me and I'll...</p>
+					<br />
+				</div>
+			</div>
+		</div>
+	</div>
 
-        </table>
-      </div>
-      </div>
-  </div>
-</div>
-<!-- Grid: Swing By & Contact -->
-<div class="w3-row" id="contact">
-  <div class="w3-half w3-dark-grey w3-container w3-center" style="height:700px">
-    <div class="w3-padding-64">
-      <h1>Swing By</h1>
-    </div>
-    <div class="w3-padding-64">
-      <p>..for a cup of coffee, or whatever.</p>
-      <p>Civic Center, Bahria-IV, PK</p>
-      <p>+92 334 5112969</p>
-      <p>amr.shah@gmail.com</p>
-    </div>
-  </div>
-  <div class="w3-half w3-teal w3-container" style="height:700px">
-    <div class="w3-padding-64 w3-padding-large">
-      <h1>Contact</h1>
-      <p class="w3-opacity">GET IN TOUCH</p>
-      <form class="w3-container w3-card w3-padding-32 w3-white" action="/action_page.php" target="_blank">
-        <div class="w3-section">
-          <label>Name</label>
-          <input class="w3-input" style="width:100%;" type="text" required name="Name">
-        </div>
-        <div class="w3-section">
-          <label>Email</label>
-          <input class="w3-input" style="width:100%;" type="text" required name="Email">
-        </div>
-        <div class="w3-section">
-          <label>Message</label>
-          <input class="w3-input" style="width:100%;" type="text" required name="Message">
-        </div>
-        <button type="submit" class="w3-button w3-teal w3-right">Send</button>
-      </form>
-    </div>
-  </div>
-</div>
+	<!-- Second Grid: Work & Resume -->
+	<div class="w3-row">
+		<div class="w3-half w3-light-grey w3-center" style="min-height: 800px"
+			id="work">
+			<div class="w3-padding-64">
+				<h2>My Education & Work</h2>
+				<p>..it all started in 2001 with C/C++...</p>
+			</div>
+			<div class="w3-row">
+				<div class="w3-half">
+					<img src="assets/images/sts.png" style="width: 100%">
+				</div>
+				<div class="w3-half">
+					<img src="assets/images/hhcs.png" style="width: 100%">
+				</div>
+			</div>
+			<div class="w3-row w3-hide-small">
 
-<!-- Footer -->
-<footer class="w3-container w3-black w3-padding-16">
-  <p>Theme design by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+				<div class="w3-half">
+					<img src="assets/images/visa-consultant.png" style="width: 100%">
+				</div>
+				<div class="w3-half">
+					<img src="assets/images/rhyw.png" style="width: 100%">
+				</div>
+			</div>
 
+			<div class="w3-row w3-hide-small">
+
+				<div class="w3-half w3-center">
+					<img src="assets/images/awsome.jpg" style="width: 100%">
+				</div>
+			</div>
+			<br>
+			<p>Just call me awesome.</p>
+		</div>
+		<div class="w3-half w3-indigo w3-container" style="min-height: 800px">
+			<div class="w3-padding-64 w3-center">
+				<h2>Resume</h2>
+				<p>A draft from my CV</p>
+				<div class="w3-container w3-responsive">
+					<table class="w3-table">
+						<tr>
+							<th>Year</th>
+							<th>Title</th>
+							<th>Where</th>
+						</tr>
+						<tr class="w3-white">
+							<td>2012-present</td>
+							<td>Half missing</td>
+							<td>In the Serenity or a utopia somewhere on Earth or Sky? I
+								call it "Singularity Strikes!" Confused?? ask me!</td>
+						</tr>
+						<tr class="w3-white">
+							<td>2012-present</td>
+							<td>Freelance Consultant</td>
+							<td>Earth</td>
+						</tr>
+						<tr>
+							<td>2010-2012</td>
+							<td>Started working as freelancer</td>
+							<td>vworker & freelancer</td>
+						</tr>
+						<tr class="w3-white">
+							<td>2008-2010</td>
+							<td>Software Engineer @ Sofnix Pvt. Ltd for Objective
+								Systems Pty AU</td>
+							<td>Islamabad, PK</td>
+						</tr>
+						<tr>
+							<td>2005-2008</td>
+							<td>Degree in Master of Computer Science</td>
+							<td>CUST(MAJU), PK</td>
+						</tr>
+						<tr class="w3-white">
+							<td>2002-2005</td>
+							<td>Kept falling in love with C/C++ and programming</td>
+							<td>My bedroom, RWP, PK</td>
+						</tr>
+						<tr class="w3-hide-medium">
+							<td>2000-2002</td>
+							<td>PGHND in Computer Science</td>
+							<td>NISTE ISB, PK</td>
+						</tr>
+						<tr class="w3-white">
+							<td>1999-2000</td>
+							<td>Degree in Bachelors of Commerce</td>
+							<td>PCC (PU) ISB, PK</td>
+						</tr>
+						<tr class="w3-hide-medium">
+							<td>1997-1998</td>
+							<td>Inter in Pre-Engg.</td>
+							<td>F.G. College Mangla Cantt, Mangla, PK<br /> F.G.
+								Quaid-e-Azam College, RWP Cantt., PK
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Grid: Swing By & Contact -->
+	<div class="w3-row" id="recent_projects">
+		<div class="w3-light-blue w3-container" style="min-height: 700px">
+			<div class="w3-padding-64">
+				<h1>Recent Projects</h1>
+
+				<div class="w3-container w3-responsive">
+					<table class="w3-table">
+						<tr>
+							<th>Year</th>
+							<th>Project Name</th>
+							<th>Lang/Tech/Tools</th>
+							<th>For</th>
+						</tr>
+						<tr class="w3-white">
+							<td>2018</td>
+							<td>Visa Consultant Website & CMS</td>
+							<td>Php, Codeigniter, MySQL</td>
+							<td>a friend at Liimra Software</td>
+						</tr>
+						<tr>
+							<td>2018</td>
+							<td>Online Support Ticket System</td>
+							<td>Php, Laravel, MySQL</td>
+							<td>a friend at Liimra Software</td>
+						</tr>
+						<tr class="w3-white">
+							<td>2018</td>
+							<td><a href="hhcsonline.org" target="_blank">Helping
+									Hands Caring Souls Website</a></td>
+							<td>Php, Wordpress, MySQL</td>
+							<td>HHCS</td>
+						</tr>
+						<tr>
+							<td>2017</td>
+							<td><a href="http://roohaniyat.com" target="_blank">Rohaaniyat.com
+									Website</a></td>
+							<td>Php, Wordpress, MySQL</td>
+							<td>Idaara-e-Faizan-e-Roohania</td>
+						</tr>
+						<tr class="w3-white">
+							<td>2012-2013</td>
+							<td><a href="#" target="_blank">AdamG Art
+									Gallery/Website</a></td>
+							<td>Php, Codeigniter, MySQL</td>
+							<td>The Artist</td>
+						</tr>
+						<tr>
+							<td>2012-2013</td>
+							<td><a href="#" target="_blank">Intelligent Workout Plan
+									Generator</a></td>
+							<td>PHP, MySQL</td>
+							<td><a href="http://www.dynamicsportsacademy.com/">Dynamic
+									Sports Academy</a></td>
+						</tr>
+						<tr class="w3-white">
+							<td>2011-2012</td>
+							<td><a href="https://www.ttnc.co.uk/" target="_blank">Anymenu
+									Statistics with TTNC UK API Integration</a></td>
+							<td>PHP, MySQL</td>
+							<td>The Client</td>
+						</tr>
+						<tr>
+							<td>2011</td>
+							<td><a href="#" target="_blank">Servers Health Monitor</a></td>
+							<td>PHP, MySQL</td>
+							<td><a href="#">The Client</a></td>
+						</tr>
+						<tr class="w3-white">
+							<td>2008-2010</td>
+							<td><a href="#" target="_blank">ASP.NET Dev Tools:
+									Layered Application Generator</a></td>
+							<td>C#, ASP.NET, MS SQL Server, ASP.NET Webservices</td>
+							<td>For my personal use to acheive DRY principle while
+								working at: <a href="http://www.readhowyouwant.com/">Sofnix/Objective
+									Systems Pty AU</a>
+							</td>
+						</tr>
+						<tr>
+							<td>2008-2010</td>
+							<td><a href="https://checkout.readhowyouwant.com"
+								target="_blank">Paypal Payments Pro Integration</a></td>
+							<td>C#, ASP.NET, MS SQL Server, ASP.NET Webservices</td>
+							<td><a href="http://www.readhowyouwant.com/">Sofnix/Objective
+									Systems Pty AU</a></td>
+						</tr>
+
+						<tr class="w3-white">
+							<td>2008-2010</td>
+							<td><a href="http://www.readhowyouwant.com" target="_blank">ReadHowYouWant.com
+									Website</a></td>
+							<td>C#, ASP.NET/MS SQl Server</td>
+							<td><a href="#">Sofnix/Objective Systems Pty. AU</a></td>
+						</tr>
+
+						<tr>
+							<td>2008-2010</td>
+							<td><a href="#" target="_blank">Amazon Book Price
+									Calculation Utility</a></td>
+							<td>C#, ASP.NET, MS SQL Server, AWS, ECS</td>
+							<td><a href="http://www.readhowyouwant.com/">Sofnix/Objective
+									Systems Pty AU</a></td>
+						</tr>
+						<tr class="w3-white">
+							<td>2008-2010</td>
+							<td><a href="#" target="_blank">Publishers & Authors
+									Websites</a></td>
+							<td>C#, ASP.NET, MS SQL Server</td>
+							<td><a href="http://www.readhowyouwant.com/">Sofnix/Objective
+									Systems Pty AU</a></td>
+						</tr>
+						<tr>
+							<td>2008-2010</td>
+							<td><a href="#" target="_blank">DITS (Data Inception,
+									Tracking System) for Book Production process</a></td>
+							<td>C#, ASP.NET, MS SQL Server, ASP.NET Webservices</td>
+							<td><a href="http://www.readhowyouwant.com/">Sofnix/Objective
+									Systems Pty AU</a></td>
+						</tr>
+						<tr class="w3-white">
+							<td>2008-2010</td>
+							<td><a href="#" target="_blank">PMP (Pending mails
+									Processor)</a></td>
+							<td>C#, ASP.NET, Windows Services, ASP.NET Webservices</td>
+							<td><a href="http://www.readhowyouwant.com/">Sofnix/Objective
+									Systems Pty AU</a></td>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Grid: Swing By & Contact -->
+	<div class="w3-row" id="contact">
+		<div class="w3-half w3-dark-grey w3-container w3-center"
+			style="height: 700px">
+			<div class="w3-padding-64">
+				<h1>Swing By</h1>
+			</div>
+			<div class="w3-padding-64">
+				<p>..for a cup of coffee, or whatever.</p>
+				<p>Civic Center, Bahria-IV, PK</p>
+				<p>+92 334 5112969</p>
+				<p>amr.shah@gmail.com</p>
+			</div>
+		</div>
+		<div class="w3-half w3-teal w3-container" style="height: 700px">
+			<div class="w3-padding-64 w3-padding-large">
+				<h1>Contact</h1>
+				<p class="w3-opacity">GET IN TOUCH</p>
+				<form class="w3-container w3-card w3-padding-32 w3-white"
+					action="/action_page.php" target="_blank">
+					<div class="w3-section">
+						<label>Name</label> <input class="w3-input" style="width: 100%;"
+							type="text" required name="Name">
+					</div>
+					<div class="w3-section">
+						<label>Email</label> <input class="w3-input" style="width: 100%;"
+							type="text" required name="Email">
+					</div>
+					<div class="w3-section">
+						<label>Message</label> <input class="w3-input"
+							style="width: 100%;" type="text" required name="Message">
+					</div>
+					<button type="submit" class="w3-button w3-teal w3-right">Send</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="w3-container w3-black w3-padding-16">
+		<p>
+			Theme design by <a href="https://www.w3schools.com/w3css/default.asp"
+				target="_blank">w3.css</a>
+		</p>
+	</footer>
+
+	<script>
+
+	var functionBasedPropVal = anime({
+		  targets: '#functionBasedPropVal .el',
+		  translateX: function(el, i) {
+		    return ((Math.random() * 0.5) + 1) +(150 * i) + el.getAttribute('data-x'); //;
+		  },
+		  translateY: function(el, i) {
+		    return Math.floor((Math.random() * 1000) + 1) + (-10 * i);
+		  },
+		  scale: function(el, i, l) {
+		    return (l - i) + .15;
+		  },
+		  rotate: function() { return anime.random(-360, 360); },
+		  duration: function() { return anime.random(1200, 3800); },
+		  duration: function() { return anime.random(800, 2000); },
+		  delay: function() { return anime.random(0, 2000); },
+		  direction: 'alternate',
+		  easing: 'easeOutExpo',
+		  /*complete: function() {
+			  window.setInterval(anime, 500);
+			},*/
+		  
+		  loop: true
+		});
+var playPause = anime({
+	  targets: '.w3-half .w3-button',
+	  translateX: 5, translateY: 5,
+	  delay: function(el, i, l) { return i * 1000; },
+	  direction: 'alternate',
+	  loop: true,
+	  autoplay: true
+	});
+</script>
 </body>
 </html>
