@@ -11,12 +11,6 @@ quote, .quote {
 	font-style: italic;
 	color: #fff;
 }
-
-#functionBasedPropVal
-{
-	margin-left: auto;
-	margin-right: auto;
-}
 .shadow {
 	position: absolute;
 	opacity: .2;
@@ -52,7 +46,7 @@ quote, .quote {
 				<h1>Ali Raza</h1>
 				<h7> a.k.a amrshah</h7>
 
-				<div id="functionBasedPropVal">
+				<div id="amrshah">
 					<div class="line">
 						<div data-x="160" class="small square el">A</div>
 					</div>
@@ -399,7 +393,7 @@ quote, .quote {
 	<script>
 
 	var functionBasedPropVal = anime({
-		  targets: '#functionBasedPropVal .el',
+		  targets: '#amrshah .el',
 		  translateX: function(el, i) {
 		    return ((Math.random() * 0.5) + 1) +(150 * i) + el.getAttribute('data-x'); //;
 		  },
