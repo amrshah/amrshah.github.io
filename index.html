@@ -25,20 +25,22 @@ quote, .quote {
 .square, .circle {
 	pointer-events: none;
 	position: relative;
-	width: 28px;
-	height: 28px;
+	min-width: 40px;
+	width: auto;
+	height: 40px;
 	margin: 1px;
 	background-color: #073656a8;
-	font-size: 12px;
+	font-size: 22px;
 	border: solid 1px #efe;
 	padding:3px;
 	z-index: 10000;
+	
 }
 .left{
 float: left;
 }
 .right{
-float: right;
+float: left;
 }
 </style>
 <link rel="stylesheet" href="assets/css/animate.min.css">
@@ -48,8 +50,8 @@ float: right;
 
 	<!-- animation -->
 	<div class="w3-row">
-	<div class="w3-full w3-blacks w3-container w3-center" style="height: 150px; padding: 50px; background-color: #161d37e3; color: #fff">
-		<div id="amrshah">					
+	<div id="header1" class="w3-full w3-blacks w3-container w3-center" style="height: 150px; padding: 50px; background-color: #161d37e3; color: #fff">
+		<div id="singularity">					
 					<div class="line">
 						<div data-x="160" class="small square el left">S</div>
 					</div>
@@ -83,6 +85,11 @@ float: right;
 					<div class="line">
 						<div data-x="25" class="small square el left">y</div>
 					</div>
+
+					<div class="line">
+						<div data-x="25" class="small square el left">-</div>
+					</div>
+
 					<!-- strikes -->
 					
 					<div class="line">
@@ -440,39 +447,89 @@ float: right;
 	</footer>
 
 	<script>
+	var ith = 0;
+	var finished = false;
+	window.setInterval(function(){
+		
+		  var t = document.getElementsByClassName('el');
+		  var z = function(){ return '#'+(Math.random()*0xFFFFFF<<2).toString(16); };
+		  Array.prototype.forEach.call(t, function(ti, index){
+			  t.item(index).style.color = '#'+(Math.random()*0x607D8B<<4).toString(16);
+			  t.item(index).style.backgroundColor = '#'+(Math.random()*0x607D8B<<11).toString(16);
+			  t.item(index).style.border = 'solid 1px '+z();
+			  ///t.item(index).style.opacity = 0.4;
+			  t.item(index).class = 'animated infinite bounce delay-2s';
+		  });
+		  
+		}, 200);
+	window.setInterval(function(){
+		singularity = keepOnTop;	//keepOnPage;	//-keepOnPage;
+		if((ith % 5)==0 && finished) singularity = keepOnPage;
+		singularity.play();
+		ith++;
+		//console.log(ith);
+		}, 2000);
+	
 	var body = document.body,
     html = document.documentElement;
 
 	var height = Math.max( body.scrollHeight, body.offsetHeight, 
                        html.clientHeight, html.scrollHeight, html.offsetHeight );
-	var amrshah = anime({
-		  targets: '#amrshah .el',
+	var singularity;
+	var keepOnPage = anime({
+		  targets: '#singularity .el',
 		  translateX: function(el, i) {
-		    return ((Math.random() * 10+i) + 1) + (150 * i) + el.getAttribute('data-x'); //;
+			return ((Math.random() * 10+i) + 1) + (35 * i) + el.getAttribute('data-x'); //;
 		  },
 		  translateY: function(el, i) {
-		    return Math.floor((Math.random() * 1000) + 10) + (-10 * i);
+		    return Math.floor((Math.random() * document.documentElement.scrollHeight/5) + 10) + (-10 * i);
 		  },
 		  scale: function(el, i, l) {
-		    return (l - i) * 0.17;
+			return (l - i) * 0.02;
 		  },
 		  rotate: function() { return anime.random(-360, 360); },
-		  duration: function() { return anime.random(400, 1000); },
-		  duration: function() { return anime.random(600, 1000); },
+		  duration: function() { return anime.random(800, 2400); },
+		  duration: function() { return anime.random(500, 1500); },
 		  delay: function() { return anime.random(0, 3000); },
 		  direction: 'alternate',
-		  easing: 'easeOutExpo',
-		  /*complete: function() {
-			  amrshah.pause();
-			},*/
+		  easing: 'linear',
 		  
-		  loop: true
+		  loop: true,
+		  autoplay: false
 		});
-	amrshah.update = function(anim) {
-		  if (!anim.completed) {
-			  //setInterval(amrshah.play(), 1000)
-		  }
-		}
+	
+	var keepOnTop = anime({
+		  targets: '#singularity .el',
+		  scale: function(el, i, l) {
+			  //el.style = 'border-radius: 105%;';
+			return l/10 - (i * 0.09)+ .35;
+		  },
+		  rotate: function(el) { return anime.random(-360, 360)/Math.random() },
+		  duration: function() { return anime.random(800, 2400); },
+		  duration: function() { return anime.random(500, 1500); },
+		  delay: function() { return anime.random(0, 3000); },
+		  direction: 'alternate',
+		  easing: 'linear',
+		  
+		  loop: true,
+		  autoplay: false
+		});
+	var crazy = anime({
+		  targets: 'img w3',
+		  scale: function(el, i, l) {
+			  //el.style = 'border-radius: 105%;';
+			return l/10 - (i * 0.09)+ .35;
+		  },
+		  //rotate: function(el) { return anime.random(-360, 360)/Math.random() },
+		  duration: function() { return anime.random(800, 2400); },
+		  duration: function() { return anime.random(500, 1500); },
+		  delay: function() { return anime.random(0, 3000); },
+		  direction: 'alternate',
+		  easing: 'linear',
+		  
+		  loop: true,
+		  autoplay: true
+		});
 var playPause = anime({
 	  targets: '.w3-half .w3-button',
 	  translateX: 5, translateY: 5,
