@@ -192,14 +192,7 @@ float: left;
 				</div>
 			</div>
 
-			<div class="w3-row w3-hide-small">
 
-				<div class="w3-half w3-center">
-					<img src="assets/images/awsome.jpg" style="width: 100%">
-				</div>
-			</div>
-			<br>
-			<p>Just call me awesome.</p>
 		</div>
 		<div class="w3-half w3-indigo w3-container" style="min-height: 800px">
 			<div class="w3-padding-64 w3-center">
@@ -501,7 +494,12 @@ float: left;
 	var keepOnTop = anime({
 		  targets: '#singularity .el',
 		  scale: function(el, i, l) {
-			  //el.style = 'border-radius: 105%;';
+			  r = anime.random(1,20);
+			  if(r>10)
+				  el.style.borderRadius = l/10 - (i * 0.09)+ .35 + (i * 7) + '%';
+			  else
+				  el.style.borderRadius = el.style.borderRadius - 13 * ( l/10 + (i * 0.09) - .35 + (i - 7)) + '%';
+			  
 			return l/10 - (i * 0.09)+ .35;
 		  },
 		  rotate: function(el) { return anime.random(-360, 360)/Math.random() },
