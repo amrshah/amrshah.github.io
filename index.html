@@ -9,37 +9,42 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <!-- Sidebar -->
+                       <!-- Collapsible Sidebar -->
             <div class="col-md-3 col-lg-2 bg-light p-3" id="sidebar">
-                <h4>News Channels</h4>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="geo" id="geoCheck" checked>
-                    <label class="form-check-label" for="geoCheck">Geo News</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="dunya" id="dunyaCheck" checked>
-                    <label class="form-check-label" for="dunyaCheck">Dunya News</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="dawn" id="dawnCheck" checked>
-                    <label class="form-check-label" for="dawnCheck">Dawn News</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="ary" id="aryCheck" checked>
-                    <label class="form-check-label" for="aryCheck">ARY News</label>
-                </div>
+                <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarContent" aria-expanded="true" aria-controls="sidebarContent">
+                    Toggle Sidebar
+                </button>
+                <div class="collapse show" id="sidebarContent">
+                    <h4>News Channels</h4>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="geo" id="geoCheck" checked>
+                        <label class="form-check-label" for="geoCheck">Geo News</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="dunya" id="dunyaCheck" checked>
+                        <label class="form-check-label" for="dunyaCheck">Dunya News</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="dawn" id="dawnCheck" checked>
+                        <label class="form-check-label" for="dawnCheck">Dawn News</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="ary" id="aryCheck" checked>
+                        <label class="form-check-label" for="aryCheck">ARY News</label>
+                    </div>
 
-                <!-- Grid Size Selector -->
-                <h5 class="mt-4">Grid Size</h5>
-                <div class="btn-group" role="group" aria-label="Grid Size">
-                    <input type="radio" class="btn-check" name="gridSize" id="grid2" value="2" autocomplete="off" >
-                    <label class="btn btn-outline-primary" for="grid2">2 Columns</label>
+                    <!-- Grid Size Selector -->
+                    <h5 class="mt-4">Grid Size</h5>
+                    <div class="btn-group" role="group" aria-label="Grid Size">
+                        <input type="radio" class="btn-check" name="gridSize" id="grid2" value="2" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="grid2">2 Columns</label>
 
-                    <input type="radio" class="btn-check" name="gridSize" id="grid3" value="3" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="grid3">3 Columns</label>
+                        <input type="radio" class="btn-check" name="gridSize" id="grid3" value="3" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="grid3">3 Columns</label>
 
-                    <input type="radio" class="btn-check" name="gridSize" id="grid4" value="4" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary" for="grid4">4 Columns</label>
+                        <input type="radio" class="btn-check" name="gridSize" id="grid4" value="4" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="grid4">4 Columns</label>
+                    </div>
                 </div>
             </div>
 
