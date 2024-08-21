@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live News Streaming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 bg-light p-3" id="sidebar">
+                <h4>News Channels</h4>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="geo" id="geoCheck" checked>
+                    <label class="form-check-label" for="geoCheck">Geo News</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="dunya" id="dunyaCheck" checked>
+                    <label class="form-check-label" for="dunyaCheck">Dunya News</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="dawn" id="dawnCheck" checked>
+                    <label class="form-check-label" for="dawnCheck">Dawn News</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="ary" id="aryCheck" checked>
+                    <label class="form-check-label" for="aryCheck">ARY News</label>
+                </div>
+
+                <!-- Grid Size Selector -->
+                <h5 class="mt-4">Grid Size</h5>
+                <div class="btn-group" role="group" aria-label="Grid Size">
+                    <input type="radio" class="btn-check" name="gridSize" id="grid2" value="2" autocomplete="off" >
+                    <label class="btn btn-outline-primary" for="grid2">2 Columns</label>
+
+                    <input type="radio" class="btn-check" name="gridSize" id="grid3" value="3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="grid3">3 Columns</label>
+
+                    <input type="radio" class="btn-check" name="gridSize" id="grid4" value="4" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="grid4">4 Columns</label>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="col-md-9 col-lg-10 p-3">
+                <div id="streams" class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4 stream-item" id="geo">
+                        <h5>Geo News</h5>
+                        <iframe src="https://www.youtube.com/watch?v=O3DPVlynUM0" frameborder="0" width="100%" height="315" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4 stream-item" id="dunya">
+                        <h5>Dunya News</h5>
+                        <iframe src="https://www.youtube.com/watch?v=iSVX3rLJxXI" frameborder="0" width="100%" height="315" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4 stream-item" id="dawn">
+                        <h5>Dawn News</h5>
+                        <iframe src="https://www.youtube.com/watch?v=umpvQNNIko0" frameborder="0" width="100%" height="315" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4 stream-item" id="ary">
+                        <h5>ARY News</h5>
+                        <iframe src="https://www.youtube.com/watch?v=sUKwTVAc0Vo" frameborder="0" width="100%" height="315" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript to control iframe visibility based on checkbox
+        document.querySelectorAll('.form-check-input').forEach((checkbox) => {
+            checkbox.addEventListener('change', function() {
+                const streamDiv = document.getElementById(this.value);
+                if (this.checked) {
+                    streamDiv.style.display = 'block';
+                } else {
+                    streamDiv.style.display = 'none';
+                }
+            });
+        });
+
+        // JavaScript to control the grid size
+        document.querySelectorAll('input[name="gridSize"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                const selectedSize = this.value;
+                document.querySelectorAll('.stream-item').forEach((item) => {
+                    item.classList.remove('col-md-6', 'col-lg-4', 'col-xl-3');
+                    if (selectedSize == '2') {
+                        item.classList.add('col-md-6');
+                    } else if (selectedSize == '3') {
+                        item.classList.add('col-lg-4');
+                    } else if (selectedSize == '4') {
+                        item.classList.add('col-xl-3');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
