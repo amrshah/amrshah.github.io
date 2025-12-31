@@ -27,12 +27,16 @@ function App() {
             <Route path="/blog" element={<BlogList />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
 
-            {/* Admin CMS Routes */}
-            <Route path="/admin" element={<CMSLayout><AdminHome /></CMSLayout>} />
-            <Route path="/admin/posts" element={<CMSLayout><AllPosts /></CMSLayout>} />
-            <Route path="/admin/new" element={<CMSLayout><EditPost /></CMSLayout>} />
-            <Route path="/admin/edit/:slug" element={<CMSLayout><EditPost /></CMSLayout>} />
-            <Route path="/admin/settings" element={<CMSLayout><Settings /></CMSLayout>} />
+            {/* Admin CMS Routes - Only accessible on localhost */}
+            {(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? (
+              <>
+                <Route path="/admin" element={<CMSLayout><AdminHome /></CMSLayout>} />
+                <Route path="/admin/posts" element={<CMSLayout><AllPosts /></CMSLayout>} />
+                <Route path="/admin/new" element={<CMSLayout><EditPost /></CMSLayout>} />
+                <Route path="/admin/edit/:slug" element={<CMSLayout><EditPost /></CMSLayout>} />
+                <Route path="/admin/settings" element={<CMSLayout><Settings /></CMSLayout>} />
+              </>
+            ) : null}
 
             {/* Fallback */}
             <Route path="*" element={<Navigate to="/" />} />

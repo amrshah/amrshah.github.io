@@ -40,7 +40,9 @@ const BlogList = () => {
             <div className="w3-content w3-padding-64" style={{ maxWidth: '900px' }}>
                 <div className="w3-row w3-center w3-margin-bottom" style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '48px' }}>
                     <Link to="/" className="w3-button w3-dark-grey w3-round-large" style={{ border: '1px solid #30363d' }}>← Back to Portfolio</Link>
-                    <Link to="/admin" className="w3-button w3-indigo w3-round-large" style={{ background: '#1f6feb' }}>Mission Control</Link>
+                    {(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && (
+                        <Link to="/admin" className="w3-button w3-indigo w3-round-large" style={{ background: '#1f6feb' }}>Mission Control</Link>
+                    )}
                 </div>
 
                 {loading ? (
