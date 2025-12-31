@@ -249,7 +249,11 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="w3-half w3-container">
-                        <form action="https://formspree.io/f/xvgzbgww" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                        <form
+                            action="https://formspree.io/f/xlgeqqqv"
+                            method="POST"
+                            style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
+                        >
                             <input type="text" name="name" required placeholder="Full Name" style={{ padding: '14px', background: '#0d1117', border: '1px solid #30363d', borderRadius: '8px', color: '#fff' }} />
                             <input type="email" name="_replyto" required placeholder="Email Address" style={{ padding: '14px', background: '#0d1117', border: '1px solid #30363d', borderRadius: '8px', color: '#fff' }} />
                             <textarea name="message" required placeholder="Your Message" style={{ padding: '14px', background: '#0d1117', border: '1px solid #30363d', borderRadius: '8px', color: '#fff', minHeight: '150px' }}></textarea>
