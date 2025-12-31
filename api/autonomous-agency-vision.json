@@ -1,0 +1,61 @@
+{
+  "id": 2,
+  "title": "The Vision: The 90% Autonomous Agency",
+  "slug": "autonomous-agency-vision",
+  "category": "AI Agents",
+  "excerpt": "Can we really automate nearly all operations of a marketing agency? A deep dive into the architecture of multi-agent systems and the role of Laravel in the backend.",
+  "content": {
+    "time": 1767166654353,
+    "blocks": [
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "The goal is ambitious: build a system where the human provides the \"Creative Direction\" and \"Strategy,\" while a swarm of AI agents handles the execution, reporting, and optimization. This is <b>Multi-Agent Orchestration (MAO)</b>."
+        }
+      },
+      {
+        "type": "header",
+        "data": {
+          "text": "The Supervisor Pattern",
+          "level": 2
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "In a complex agency environment, we implement a \"Supervisor\" agent that acts as a project manager. It decomposes a strategy into tasks, assigns them to specialized \"Worker\" agents, and verifies the output."
+        }
+      },
+      {
+        "type": "code",
+        "data": {
+          "code": "// Pseudocode for Supervisor Delegation\nconst strategy = \"Increase organic traffic by 20% in Q1\";\nconst tasks = supervisor.decompose(strategy);\n\ntasks.forEach(task => {\n    const worker = Orchestrator.getBestWorkerFor(task.type);\n    worker.execute(task).then(result => {\n        supervisor.validate(result);\n    });\n});"
+        }
+      },
+      {
+        "type": "header",
+        "data": {
+          "text": "Why Laravel?",
+          "level": 2
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "While Python is king of AI libraries, Laravel is the king of enterprise stability. Using Laravel's robust <b>Queue system</b> and <b>State Machines</b>, we can manage long-running agentic workflows."
+        }
+      }
+    ],
+    "version": "2.31.0"
+  },
+  "status": "published",
+  "created_at": "2025-12-31 07:37:34",
+  "updated_at": "2025-12-31 07:37:34",
+  "seo": {
+    "post_id": 2,
+    "meta_title": "The Vision: The 90% Autonomous Agency",
+    "meta_description": "Can we really automate nearly all operations of a marketing agency? A deep dive into the architecture of multi-agent systems and the role of Laravel in the backend.",
+    "og_image": null,
+    "keywords": "architecture, finance, ai agents, laravel"
+  }
+}

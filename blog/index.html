@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Insights & Research | Ali Raza (amrshah)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../assets/css/animate.min.css">
+    <script src="../assets/js/anime.min.js"></script>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .blog-container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .header-section {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            border-bottom: 1px solid #30363d;
+        }
+
+        .category-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .cat-finance {
+            background-color: #238636;
+            color: white;
+        }
+
+        .cat-arch {
+            background-color: #1f6feb;
+            color: white;
+        }
+
+        .cat-ai {
+            background-color: #8957e5;
+            color: white;
+        }
+
+        .cat-perf {
+            background-color: #d29922;
+            color: white;
+        }
+
+        .cat-til {
+            background-color: #6e7681;
+            color: white;
+        }
+
+        .post-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
+        }
+
+        .post-content {
+            padding: 24px;
+        }
+
+        .post-title {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #58a6ff;
+        }
+
+        .post-excerpt {
+            color: #8b949e;
+            line-height: 1.6;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #58a6ff;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid #30363d;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-section">
+        <h1 class="w3-xxlarge">Singularity Insights</h1>
+        <p class="w3-large" style="color: #8b949e;">Exploring the intersection of Architecture, Finance, and AI Agents
+        </p>
+        <a href="../index.html" class="nav-link">← Back to Portfolio</a>
+    </div>
+
+    <div class="blog-container">
+
+        <!-- Category Filters -->
+        <div class="w3-row w3-margin-bottom w3-center">
+            <span class="w3-tag w3-round w3-dark-grey" style="cursor:pointer; margin: 5px;">All</span>
+            <span class="w3-tag w3-round cat-finance" style="cursor:pointer; margin: 5px;">Finance</span>
+            <span class="w3-tag w3-round cat-arch" style="cursor:pointer; margin: 5px;">Architecture</span>
+            <span class="w3-tag w3-round cat-ai" style="cursor:pointer; margin: 5px;">AI Agents</span>
+            <span class="w3-tag w3-round cat-perf" style="cursor:pointer; margin: 5px;">Performance</span>
+            <span class="w3-tag w3-round cat-til" style="cursor:pointer; margin: 5px;">TIL</span>
+        </div>
+
+        <!-- Featured / Recent Posts -->
+        <div id="posts-list">
+
+            <article class="post-card" onclick="window.location.href='posts/accounting-first-logic.html'">
+                <div class="post-content">
+                    <span class="category-tag cat-finance">Financial Architecture</span>
+                    <h2 class="post-title">The "Accounting-First" Logic in Web Systems</h2>
+                    <p class="post-excerpt">Why every business system should fundamentally be a ledger. Exploring the
+                        rigors of financial systems and why double-entry bookkeeping is a must for auditable logs.</p>
+                    <div class="w3-small" style="color: #6e7681;">Dec 31, 2025 • 8 min read</div>
+                </div>
+            </article>
+
+            <article class="post-card" onclick="window.location.href='posts/autonomous-agency-vision.html'">
+                <div class="post-content">
+                    <span class="category-tag cat-ai">90% Autonomous Agency</span>
+                    <h2 class="post-title">The Vision: Automating 90% of Agency Operations</h2>
+                    <p class="post-excerpt">Can we really automate nearly all operations of a marketing agency? A deep
+                        dive into the architecture of multi-agent systems and the role of Laravel in the backend.</p>
+                    <div class="w3-small" style="color: #6e7681;">Dec 30, 2025 • 12 min read</div>
+                </div>
+            </article>
+
+            <article class="post-card" onclick="window.location.href='posts/legacy-proof-laravel.html'">
+                <div class="post-content">
+                    <span class="category-tag cat-arch">Enterprise Laravel</span>
+                    <h2 class="post-title">Building "Legacy-Proof" Laravel Applications</h2>
+                    <p class="post-excerpt">Strategies for organizing folders and services to ensure your system remains
+                        maintainable even after 5 years of rapid evolution.</p>
+                    <div class="w3-small" style="color: #6e7681;">Dec 28, 2025 • 10 min read</div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Ali Raza. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Animations for post cards
+        anime({
+            targets: '.post-card',
+            opacity: [0, 1],
+            translateY: [20, 0],
+            delay: anime.stagger(100),
+            easing: 'easeOutQuad',
+            duration: 800
+        });
+    </script>
+</body>
+
+</html>

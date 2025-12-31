@@ -1,0 +1,63 @@
+.singularity-header {
+    background-color: #161d37e3;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+#header1 {
+    padding: 60px 20px 20px;
+}
+
+#singularity {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.line {
+    display: inline-block;
+}
+
+.small {
+    width: 18px;
+    height: 18px;
+}
+
+.square {
+    pointer-events: none;
+    position: relative;
+    min-width: 40px;
+    width: auto;
+    height: 40px;
+    margin: 1px;
+    background-color: #073656a8;
+    font-size: 22px;
+    border: solid 1px #efe;
+    padding: 3px;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left,
+.right {
+    float: left;
+}
+
+.branding h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.branding h6 {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.alias {
+    color: #aaa;
+    font-size: 0.9rem;
+}

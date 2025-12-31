@@ -1,0 +1,80 @@
+{
+  "id": 1,
+  "title": "The \"Accounting-First\" Logic in Web Systems",
+  "slug": "accounting-first-logic",
+  "category": "Finance",
+  "excerpt": "Why every business system should fundamentally be a ledger. Exploring the rigors of financial systems and why double-entry bookkeeping is a must for auditable logs.",
+  "content": {
+    "time": 1767166654353,
+    "blocks": [
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "In 17 years of architecting enterprise systems, I've seen one recurring failure: systems that treat \"money\" as just another column in a database. When you're building for scale and auditability, money isn't a state—it's a history."
+        }
+      },
+      {
+        "type": "header",
+        "data": {
+          "text": "1. The \"Tally\" Approach",
+          "level": 2
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "Most developers start by adding a <code>balance</code> field to a <code>users</code> table. This is the first step toward a reconciliation nightmare. A proper financial system focuses on the <b>transaction log</b>. The balance is merely the sum of all transactions."
+        }
+      },
+      {
+        "type": "header",
+        "data": {
+          "text": "2. Double-Entry Bookkeeping for Developers",
+          "level": 2
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "Double-entry isn't just for accountants; it's a powerful pattern for data integrity. Every transaction must have at least one debit and one credit that balance out to zero."
+        }
+      },
+      {
+        "type": "code",
+        "data": {
+          "code": "// A simple ledger entry in Laravel\n$transaction = Ledger::create([\n    'description' => 'Service Payment',\n    'amount' => '150.00',\n]);\n\n$transaction->entries()->createMany([\n    ['account_id' => $customer_account, 'type' => 'debit', 'amount' => '150.00'],\n    ['account_id' => $revenue_account, 'type' => 'credit', 'amount' => '150.00'],\n]);"
+        }
+      },
+      {
+        "type": "header",
+        "data": {
+          "text": "3. The BCMath Non-Negotiable",
+          "level": 2
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "Floating-point math is the enemy of financial accuracy. In PHP, using <code>bcadd()</code>, <code>bcsub()</code>, and related functions is essential to maintain precision."
+        }
+      },
+      {
+        "type": "code",
+        "data": {
+          "code": "// Precision math for financial systems\n$price = '19.99';\n$tax_rate = '0.05';\n$tax = bcmul($price, $tax_rate, 2); // '0.99'\n$total = bcadd($price, $tax, 2);    // '20.98'"
+        }
+      }
+    ],
+    "version": "2.31.0"
+  },
+  "status": "published",
+  "created_at": "2025-12-31 07:37:34",
+  "updated_at": "2025-12-31 07:37:34",
+  "seo": {
+    "post_id": 1,
+    "meta_title": "The \"Accounting-First\" Logic in Web Systems",
+    "meta_description": "Why every business system should fundamentally be a ledger. Exploring the rigors of financial systems and why double-entry bookkeeping is a must for auditable logs.",
+    "og_image": null,
+    "keywords": "architecture, finance, ai agents, laravel"
+  }
+}

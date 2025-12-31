@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Code is Poetry</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+		quote,
+		.quote {
+			margin: 40px;
+			font-style: italic;
+			color: #fff;
+		}
+
+		.shadow {
+			position: absolute;
+			opacity: .2;
+		}
+
+		.small {
+			width: 18px;
+			height: 18px;
+		}
+
+		.square,
+		.circle {
+			pointer-events: none;
+			position: relative;
+			min-width: 40px;
+			width: auto;
+			height: 40px;
+			margin: 1px;
+			background-color: #073656a8;
+			font-size: 22px;
+			border: solid 1px #efe;
+			padding: 3px;
+			z-index: 10000;
+
+		}
+
+		.left {
+			float: left;
+		}
+
+		.right {
+			float: left;
+		}
+	</style>
+	<link rel="stylesheet" href="assets/css/animate.min.css">
+	<script src="assets/js/anime.min.js"></script>
+</head>
+
+<body class="w3-content" style="max-width: 1300px">
+
+	<!-- animation -->
+	<div class="w3-row">
+		<div id="header1" class="w3-full w3-blacks w3-container w3-center"
+			style="height: 150px; padding: 50px; background-color: #161d37e3; color: #fff">
+			<div id="singularity">
+				<div class="line">
+					<div data-x="160" class="small square el left">S</div>
+				</div>
+				<div class="line">
+					<div data-x="80" class="small square el left">i</div>
+				</div>
+				<div class="line">
+					<div data-x="250" class="small square el left">n</div>
+				</div>
+				<div class="line">
+					<div data-x="140" class="small square el left">g</div>
+				</div>
+				<div class="line">
+					<div data-x="29" class="small square el left">u</div>
+				</div>
+				<div class="line">
+					<div data-x="265" class="small square el left">l</div>
+				</div>
+				<div class="line">
+					<div data-x="77" class="small square el left">a</div>
+				</div>
+				<div class="line">
+					<div data-x="160" class="small square el left">r</div>
+				</div>
+				<div class="line">
+					<div data-x="205" class="small square el left">i</div>
+				</div>
+				<div class="line">
+					<div data-x="125" class="small square el left">t</div>
+				</div>
+				<div class="line">
+					<div data-x="25" class="small square el left">y</div>
+				</div>
+
+				<div class="line">
+					<div data-x="25" class="small square el left">-</div>
+				</div>
+
+				<!-- strikes -->
+
+				<div class="line">
+					<div data-x="80" class="small square el right">s</div>
+				</div>
+				<div class="line">
+					<div data-x="220" class="small square el right">e</div>
+				</div>
+				<div class="line">
+					<div data-x="250" class="small square el right">k</div>
+				</div>
+				<div class="line">
+					<div data-x="100" class="small square el right">i</div>
+				</div>
+				<div class="line">
+					<div data-x="120" class="small square el right">r</div>
+				</div>
+				<div class="line">
+					<div data-x="130" class="small square el right">t</div>
+				</div>
+				<div class="line">
+					<div data-x="250" class="small square el right">S</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- First Grid: Logo & About -->
+	<div id="anim" class="w3-row">
+		<div class="w3-half w3-black w3-container w3-center" style="min-height: 690px">
+			<div class="w3-padding-64">
+				<h1>Ali Raza</h1>
+				<h7>Software Architect & Development Innovator</h7>
+				<p style="margin-top: 20px; color: #aaa;">a.k.a amrshah</p>
+			</div>
+			<div class="w3-padding-64">
+				<a href="#" class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Home</a>
+				<a href="#work" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">Experience</a>
+				<a href="#work" class="w3-button w3-black w3-block w3-hover-dark-grey w3-padding-16">Resume</a>
+				<a href="#recent_projects" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">Portfolio</a>
+				<a href="blog/index.html" class="w3-button w3-black w3-block w3-hover-deep-purple w3-padding-16">Blog &
+					Insights</a>
+				<a href="#contact" class="w3-button w3-black w3-block w3-hover-brown w3-padding-16">Connect</a>
+			</div>
+			<div class="quote">
+				<quote>"Where innovation meets imagination-a journey from structured code to boundless creativity.
+					Welcome to my Singularity, where every solution is crafted with precision and passion."</quote>
+				<br>- Ali Raza
+			</div>
+		</div>
+		<div class="w3-half w3-blue-grey w3-container" style="min-height: 720px">
+			<div class="w3-padding-64 w3-center">
+				<h1>About Me</h1>
+				<img src="assets/images/amrshah.jpg" class="w3-margin w3-circle" alt="amrshah" style="width: 50%">
+				<div class="w3-left-align w3-padding-large">
+					<p>Hello! I'm a software architect and full-stack developer with over 15 years of experience
+						transforming complex challenges into elegant solutions.</p>
+
+					<p>My passion lies in building robust, scalable applications and creating intelligent development
+						tools that empower teams to work smarter, not harder. From enterprise systems to innovative web
+						platforms, I specialize in architecting solutions that drive real business value.</p>
+
+					<p>Currently, I focus on leveraging cutting-edge frameworks and emerging technologies to craft tools
+						that streamline development workflows-because the best code is code that writes itself.</p>
+
+					<p>Whether it's architecting microservices, optimizing databases, or building intuitive user
+						experiences, I bring a strategic mindset and meticulous attention to detail to every project.
+					</p>
+
+					<p><strong>Let's connect and explore how we can build something extraordinary together.</strong></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Second Grid: Work & Resume -->
+	<div class="w3-row">
+		<div class="w3-half w3-light-grey w3-center" style="min-height: 800px" id="work">
+			<div class="w3-padding-64">
+				<h2>Professional Journey</h2>
+				<p>Two decades of innovation, from C++ fundamentals to modern full-stack architecture</p>
+			</div>
+			<div class="w3-row">
+				<div class="w3-half">
+					<img src="assets/images/sts.png" style="width: 100%">
+				</div>
+				<div class="w3-half">
+					<img src="assets/images/hhcs.png" style="width: 100%">
+				</div>
+			</div>
+			<div class="w3-row w3-hide-small">
+
+				<div class="w3-half">
+					<img src="assets/images/visa-consultant.png" style="width: 100%">
+				</div>
+				<div class="w3-half">
+					<img src="assets/images/rhyw.png" style="width: 100%">
+				</div>
+			</div>
+
+
+		</div>
+		<div class="w3-half w3-indigo w3-container" style="min-height: 800px">
+			<div class="w3-padding-64 w3-center">
+				<h2>Career Highlights</h2>
+				<p>Milestones that shaped my expertise</p>
+				<div class="w3-container w3-responsive">
+					<table class="w3-table">
+						<tr>
+							<th>Period</th>
+							<th>Role</th>
+							<th>Details</th>
+						</tr>
+						<tr class="w3-white">
+							<td>2012–Present</td>
+							<td>Principal Consultant, Architect & Developer</td>
+							<td>Independent consultant specializing in custom enterprise solutions, development
+								automation, and strategic technology consulting</td>
+						</tr>
+						<tr>
+							<td>2010–2012</td>
+							<td>Freelance Software Developer</td>
+							<td>Global freelance platform specialization: vWorker & Freelancer.com</td>
+						</tr>
+						<tr class="w3-white">
+							<td>2008–2010</td>
+							<td>Software Engineer</td>
+							<td>Sofnix Pvt. Ltd / Objective Systems Pty AU - Full-stack development, API integrations,
+								enterprise applications</td>
+						</tr>
+						<tr>
+							<td>2005–2008</td>
+							<td>Master of Computer Science</td>
+							<td>CUST (MAJU), Pakistan - Software architecture, Advanced algorithms and systems design
+							</td>
+						</tr>
+						<tr class="w3-white">
+							<td>2002–2005</td>
+							<td>Deep Dive into Programming</td>
+							<td>Intensive self-study and practical application in C/C++, building foundation for
+								software engineering excellence</td>
+						</tr>
+						<tr class="w3-hide-medium">
+							<td>2000–2002</td>
+							<td>Post-Graduate Higher National Diploma</td>
+							<td>Computer Science - NISTE Islamabad, Pakistan</td>
+						</tr>
+						<tr class="w3-white">
+							<td>1999–2000</td>
+							<td>Bachelor of Commerce</td>
+							<td>Punjab College of Commerce (PU), Islamabad</td>
+						</tr>
+						<tr class="w3-hide-medium">
+							<td>1997–1998</td>
+							<td>Intermediate in Pre-Engineering</td>
+							<td>F.G. College Mangla Cantt & F.G. Quaid-e-Azam College, Rawalpindi</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Grid: Recent Projects -->
+	<div class="w3-row" id="recent_projects">
+		<div class="w3-light-blue w3-container" style="min-height: 700px">
+			<div class="w3-padding-64">
+				<h1>Featured Projects</h1>
+				<p style="margin-top: 10px;">A curated selection of impactful solutions delivered across diverse
+					industries</p>
+
+				<div class="w3-container w3-responsive">
+					<table class="w3-table">
+						<tr>
+							<th>Year</th>
+							<th>Project</th>
+							<th>Technology Stack</th>
+							<th>Client/Organization</th>
+						</tr>
+						<tr class="w3-white">
+							<td>2018</td>
+							<td>Visa Consultant Platform & CMS</td>
+							<td>PHP, CodeIgniter, MySQL</td>
+							<td>Liimra Software Solutions</td>
+						</tr>
+						<tr>
+							<td>2018</td>
+							<td>Cloud-Based Support Ticket Management System</td>
+							<td>PHP, Laravel, MySQL</td>
+							<td>Liimra Software Solutions</td>
+						</tr>
+						<tr class="w3-white">
+							<td>2018</td>
+							<td><a href="http://hhcsonline.org" target="_blank">Helping Hands Caring Souls NGO
+									Website</a></td>
+							<td>PHP, WordPress, MySQL</td>
+							<td>HHCS Charitable Organization</td>
+						</tr>
+						<tr>
+							<td>2017</td>
+							<td><a href="http://roohaniyat.com" target="_blank">Roohaniyat Spiritual Portal</a></td>
+							<td>PHP, WordPress, MySQL</td>
+							<td>Idaara-e-Faizan-e-Roohania</td>
+						</tr>
+						<tr class="w3-white">
+							<td>2012–2013</td>
+							<td>AdamG Digital Art Gallery & E-Commerce</td>
+							<td>PHP, CodeIgniter, MySQL</td>
+							<td>Independent Artist Portfolio</td>
+						</tr>
+						<tr>
+							<td>2012–2013</td>
+							<td>Intelligent Workout Plan Generator</td>
+							<td>PHP, MySQL, Algorithm Design</td>
+							<td><a href="http://www.dynamicsportsacademy.com/" target="_blank">Dynamic Sports
+									Academy</a></td>
+						</tr>
+						<tr class="w3-white">
+							<td>2011–2012</td>
+							<td><a href="https://www.ttnc.co.uk/" target="_blank">Anymenu Analytics Platform with TTNC
+									API</a></td>
+							<td>PHP, MySQL, RESTful APIs</td>
+							<td>UK based Marketing/Sales Professional</td>
+						</tr>
+						<tr>
+							<td>2011</td>
+							<td>Multi-Server Health Monitoring Dashboard</td>
+							<td>PHP, MySQL, Real-time Analytics</td>
+							<td>Enterprise Infrastructure Client</td>
+						</tr>
+						<tr class="w3-white">
+							<td>2008–2010</td>
+							<td>Automated Layered Application Code Generator (DevTool)</td>
+							<td>C#, ASP.NET, MS SQL Server, Web Services</td>
+							<td>Personal R&D for DRY principle at <a href="http://www.readhowyouwant.com/"
+									target="_blank">Sofnix/Objective Systems</a></td>
+						</tr>
+						<tr>
+							<td>2008–2010</td>
+							<td><a href="https://checkout.readhowyouwant.com" target="_blank">PayPal Payments Pro
+									Gateway Integration</a></td>
+							<td>C#, ASP.NET, MS SQL Server, Payment APIs</td>
+							<td><a href="http://www.readhowyouwant.com/" target="_blank">ReadHowYouWant.com</a></td>
+						</tr>
+						<tr class="w3-white">
+							<td>2008–2010</td>
+							<td><a href="http://www.readhowyouwant.com" target="_blank">ReadHowYouWant E-Commerce
+									Platform</a></td>
+							<td>C#, ASP.NET, MS SQL Server</td>
+							<td>Objective Systems Pty Ltd, Australia</td>
+						</tr>
+						<tr>
+							<td>2008–2010</td>
+							<td>Amazon Web Services Price Intelligence Tool</td>
+							<td>C#, ASP.NET, MS SQL, AWS ECS</td>
+							<td><a href="http://www.readhowyouwant.com/" target="_blank">Sofnix/Objective Systems</a>
+							</td>
+						</tr>
+						<tr class="w3-white">
+							<td>2008–2010</td>
+							<td>White-Label Publishing Portals</td>
+							<td>C#, ASP.NET, MS SQL Server</td>
+							<td>Publishers & Authors Network</td>
+						</tr>
+						<tr>
+							<td>2008–2010</td>
+							<td>DITS: Book Production Workflow Management</td>
+							<td>C#, ASP.NET, MS SQL, Web Services</td>
+							<td>Publishing Operations at Objective Systems</td>
+						</tr>
+						<tr class="w3-white">
+							<td>2008–2010</td>
+							<td>PMP: Automated Email Processing Service</td>
+							<td>C#, Windows Services, ASP.NET Web Services</td>
+							<td>Internal Operations Automation</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Grid: Research & Insights (Blog) -->
+	<div class="w3-row" id="blog">
+		<div class="w3-container w3-padding-64" style="background-color: #1a1a2e; color: #fff;">
+			<div class="w3-content" style="max-width: 1000px;">
+				<h2 class="w3-center">Research & Insights</h2>
+				<p class="w3-center w3-opacity">Exploring the frontier of Architecture, Finance, and AI Agents</p>
+
+				<div class="w3-row-padding w3-margin-top">
+					<div class="w3-third w3-margin-bottom">
+						<div class="w3-card w3-padding w3-dark-grey" style="min-height: 250px;">
+							<h3>Financial Ledger Logic</h3>
+							<p>Why double-entry bookkeeping is the backbone of reliable enterprise systems.</p>
+							<a href="blog/index.html" class="w3-button w3-indigo w3-margin-top">Read More</a>
+						</div>
+					</div>
+					<div class="w3-third w3-margin-bottom">
+						<div class="w3-card w3-padding w3-indigo" style="min-height: 250px;">
+							<h3>Multi-Agent Systems</h3>
+							<p>Architecting the 90% autonomous marketing agency with Laravel and LLMs.</p>
+							<a href="blog/index.html" class="w3-button w3-dark-grey w3-margin-top">Read More</a>
+						</div>
+					</div>
+					<div class="w3-third w3-margin-bottom">
+						<div class="w3-card w3-padding w3-teal" style="min-height: 250px;">
+							<h3>Legacy-Proof Laravel</h3>
+							<p>Architectural patterns for long-term maintainability and scalability.</p>
+							<a href="blog/index.html" class="w3-button w3-indigo w3-margin-top">Read More</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="w3-center w3-margin-top">
+					<a href="blog/index.html"
+						class="w3-button w3-white w3-border w3-border-indigo w3-hover-indigo w3-round-large w3-padding-large">Explore
+						All Insights</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Grid: Contact Section -->
+	<div class="w3-row" id="contact">
+		<div class="w3-half w3-dark-grey w3-container w3-center" style="height: 700px">
+			<div class="w3-padding-64">
+				<h1>Let's Connect</h1>
+			</div>
+			<div class="w3-padding-64">
+				<p style="font-size: 18px; margin-bottom: 30px;">Ready to discuss your next project?</p>
+				<p><strong>Location:</strong> Civic Center, Bahria Town Phase IV, Pakistan</p>
+				<p><strong>Phone:</strong> +92 334 5112969</p>
+				<p><strong>Email:</strong> amr.shah@gmail.com</p>
+				<p style="margin-top: 40px; font-size: 14px; color: #aaa;">Available for consulting, contract projects,
+					and strategic partnerships</p>
+			</div>
+		</div>
+		<div class="w3-half w3-teal w3-container" style="height: 700px">
+			<div class="w3-padding-64 w3-padding-large">
+				<h1>Get In Touch</h1>
+				<p class="w3-opacity">SEND ME A MESSAGE</p>
+				<form class="w3-container w3-card w3-padding-32 w3-white" action="/action_page.php" target="_blank">
+					<div class="w3-section">
+						<label>Name</label> <input class="w3-input" style="width: 100%;" type="text" required
+							name="Name" placeholder="Your full name">
+					</div>
+					<div class="w3-section">
+						<label>Email</label> <input class="w3-input" style="width: 100%;" type="email" required
+							name="Email" placeholder="your.email@example.com">
+					</div>
+					<div class="w3-section">
+						<label>Message</label>
+						<textarea class="w3-input" style="width: 100%; min-height: 120px;" required name="Message"
+							placeholder="Tell me about your project or inquiry..."></textarea>
+					</div>
+					<button type="submit" class="w3-button w3-teal w3-right">Send Message</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="w3-container w3-black w3-padding-16">
+		<p>
+			© 2025 Ali Raza (amrshah). All rights reserved. | Theme design by <a
+				href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+		</p>
+	</footer>
+
+	<script>
+		var ith = 0;
+		var finished = false;
+		window.setInterval(function () {
+
+			var t = document.getElementsByClassName('el');
+			var z = function () { return '#' + (Math.random() * 0xFFFFFF << 2).toString(16); };
+			Array.prototype.forEach.call(t, function (ti, index) {
+				t.item(index).style.color = '#' + (Math.random() * 0x607D8B << 4).toString(16);
+				t.item(index).style.backgroundColor = '#' + (Math.random() * 0x607D8B << 11).toString(16);
+				t.item(index).style.border = 'solid 1px ' + z();
+				t.item(index).class = 'animated infinite bounce delay-2s';
+			});
+
+		}, 200);
+		window.setInterval(function () {
+			singularity = keepOnTop;
+			if ((ith % 5) == 0 && finished) singularity = keepOnPage;
+			singularity.play();
+			ith++;
+		}, 2000);
+
+		var body = document.body,
+			html = document.documentElement;
+
+		var height = Math.max(body.scrollHeight, body.offsetHeight,
+			html.clientHeight, html.scrollHeight, html.offsetHeight);
+		var singularity;
+		var keepOnPage = anime({
+			targets: '#singularity .el',
+			translateX: function (el, i) {
+				return ((Math.random() * 10 + i) + 1) + (35 * i) + el.getAttribute('data-x');
+			},
+			translateY: function (el, i) {
+				return Math.floor((Math.random() * document.documentElement.scrollHeight / 5) + 10) + (-10 * i);
+			},
+			scale: function (el, i, l) {
+				return (l - i) * 0.02;
+			},
+			rotate: function () { return anime.random(-360, 360); },
+			duration: function () { return anime.random(800, 2400); },
+			duration: function () { return anime.random(500, 1500); },
+			delay: function () { return anime.random(0, 3000); },
+			direction: 'alternate',
+			easing: 'linear',
+
+			loop: true,
+			autoplay: false
+		});
+
+		var keepOnTop = anime({
+			targets: '#singularity .el',
+			scale: function (el, i, l) {
+				r = anime.random(1, 20);
+				if (r > 10)
+					el.style.borderRadius = l / 10 - (i * 0.09) + .35 + (i * 7) + '%';
+				else
+					el.style.borderRadius = el.style.borderRadius - 13 * (l / 10 + (i * 0.09) - .35 + (i - 7)) + '%';
+
+				return l / 10 - (i * 0.09) + .35;
+			},
+			rotate: function (el) { return anime.random(-360, 360) / Math.random() },
+			duration: function () { return anime.random(800, 2400); },
+			duration: function () { return anime.random(500, 1500); },
+			delay: function () { return anime.random(0, 3000); },
+			direction: 'alternate',
+			easing: 'linear',
+
+			loop: true,
+			autoplay: false
+		});
+		var crazy = anime({
+			targets: 'img w3',
+			scale: function (el, i, l) {
+				return l / 10 - (i * 0.09) + .35;
+			},
+			duration: function () { return anime.random(800, 2400); },
+			duration: function () { return anime.random(500, 1500); },
+			delay: function () { return anime.random(0, 3000); },
+			direction: 'alternate',
+			easing: 'linear',
+
+			loop: true,
+			autoplay: true
+		});
+		var playPause = anime({
+			targets: '.w3-half .w3-button',
+			translateX: 5, translateY: 5,
+			delay: function (el, i, l) { return i * 1000; },
+			direction: 'alternate',
+			loop: true,
+			autoplay: true
+		});
+	</script>
+</body>
+
+</html>

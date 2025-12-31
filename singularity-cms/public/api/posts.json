@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "The \"Accounting-First\" Logic in Web Systems",
+    "slug": "accounting-first-logic",
+    "category": "Finance",
+    "excerpt": "Why every business system should fundamentally be a ledger. Exploring the rigors of financial systems and why double-entry bookkeeping is a must for auditable logs.",
+    "created_at": "2025-12-31 07:37:34"
+  },
+  {
+    "id": 2,
+    "title": "The Vision: The 90% Autonomous Agency",
+    "slug": "autonomous-agency-vision",
+    "category": "AI Agents",
+    "excerpt": "Can we really automate nearly all operations of a marketing agency? A deep dive into the architecture of multi-agent systems and the role of Laravel in the backend.",
+    "created_at": "2025-12-31 07:37:34"
+  }
+]
