@@ -1,0 +1,412 @@
+{
+  "id": 8,
+  "title": "Unlock Peak Productivity: Setting Up Antigravity for Laravel & Next.js on Any Machine",
+  "slug": "unlock-peak-productivity-setting-up-antigravity-for-laravel-nextjs-on-any-machine",
+  "category": "Laravel",
+  "excerpt": "",
+  "content": {
+    "time": 1768196087568,
+    "blocks": [
+      {
+        "id": "GsTG2js1fo",
+        "type": "paragraph",
+        "data": {
+          "text": "Are you juggling Laravel APIs and Next.js frontends, constantly wishing for a development environment that anticipates your needs without bogging down your machine? Google Antigravity Studio promises to revolutionize your workflow, but getting the most out of it—especially on a low-to-mid-spec laptop—requires a strategic setup."
+        }
+      },
+      {
+        "id": "3UMlwwUVOm",
+        "type": "paragraph",
+        "data": {
+          "text": "This guide will walk you through a step-by-step process to configure Antigravity for maximum productivity, minimal token usage, and a harmonious developer-AI collaboration, complete with task management and clear documentation."
+        }
+      },
+      {
+        "id": "5UJW2ELzTw",
+        "type": "paragraph",
+        "data": {
+          "text": "<b>What We'll Cover:</b>"
+        }
+      },
+      {
+        "id": "7V5NzIN2wA",
+        "type": "list",
+        "data": {
+          "style": "ordered",
+          "meta": {},
+          "items": [
+            {
+              "content": "Why Resource Optimization Matters",
+              "meta": {},
+              "items": []
+            },
+            {
+              "content": "Activating Model Context Protocol (MCP) Servers",
+              "meta": {},
+              "items": []
+            },
+            {
+              "content": "Defining Your Workflow: Agent Rules &amp; Presets",
+              "meta": {},
+              "items": []
+            },
+            {
+              "content": "Implementing a Collaborative Task Management System",
+              "meta": {},
+              "items": []
+            },
+            {
+              "content": "Crafting Essential Custom Workflows",
+              "meta": {},
+              "items": []
+            }
+          ]
+        }
+      },
+      {
+        "id": "rokKIW7yr-",
+        "type": "paragraph",
+        "data": {
+          "text": "Let's dive in!"
+        }
+      },
+      {
+        "id": "vrW2b4geEm",
+        "type": "header",
+        "data": {
+          "text": "Step 1: Resource Optimization – Making Antigravity Play Nice with Your Laptop",
+          "level": 3
+        }
+      },
+      {
+        "id": "Z4jpxIMPLA",
+        "type": "paragraph",
+        "data": {
+          "text": "Working on a machine that isn't a powerhouse means we need to be smart about how Antigravity operates. The goal is to prevent it from consuming excessive CPU or memory, which can lead to a sluggish development experience."
+        }
+      },
+      {
+        "id": "oKrqcTdYXJ",
+        "type": "paragraph",
+        "data": {
+          "text": "<b>Action:</b> Open your Antigravity <b>Global Agent Settings</b>. You can usually find this by clicking the ... menu at the top of the Antigravity window and looking for \"Agent Settings.\""
+        }
+      },
+      {
+        "id": "z7X_99Q6ni",
+        "type": "paragraph",
+        "data": {
+          "text": "<b>Adjust these settings:</b>"
+        }
+      },
+      {
+        "id": "9voqEB9Dn_",
+        "type": "list",
+        "data": {
+          "style": "unordered",
+          "meta": {},
+          "items": [
+            {
+              "content": "Concurrent Agent Tasks: Set this to 1. This ensures the AI processes one task at a time, preventing CPU spikes from simultaneous backend and frontend operations.",
+              "meta": {},
+              "items": []
+            },
+            {
+              "content": "Indexing Scope: Limit Antigravity's indexing to essential project folders like app/, routes/, src/, components/. Crucially, exclude vendor/ (for Laravel) and node_modules/ (for Next.js/React). These folders contain thousands of files that rarely change and are expensive to index.",
+              "meta": {},
+              "items": []
+            },
+            {
+              "content": "Terminal Throttling: Introduce a slight delay (e.g., 2 seconds) between consecutive terminal commands executed by the agent. This gives your system a brief moment to recover, especially after heavy operations like npm run build or composer update.",
+              "meta": {},
+              "items": []
+            }
+          ]
+        }
+      },
+      {
+        "id": "YZah9EjY_s",
+        "type": "code",
+        "data": {
+          "code": "// Example of conceptual global agent settings adjustments\n// (UI elements will differ based on Antigravity version)\nConcurrent Agent Tasks: 1\nIndexing Paths: app/, routes/, src/, components/, database/migrations/, tests/\nExcluded Paths: vendor/, node_modules/, .git/, .antigravity/\nTerminal Command Delay: 2000ms"
+        }
+      },
+      {
+        "id": "EqummmbUdc",
+        "type": "header",
+        "data": {
+          "text": "Step 2: Activating Model Context Protocol (MCP) Servers – Your Token-Saving Powerhouse",
+          "level": 3
+        }
+      },
+      {
+        "id": "mJPjr4IZPv",
+        "type": "paragraph",
+        "data": {
+          "text": "MCP servers are game-changers. Instead of the Antigravity agent constantly scanning your entire codebase (which consumes tokens and CPU), an MCP server provides structured, real-time insights into your project. The agent can \"ask\" the MCP server for specific information (e.g., \"list all Laravel routes\") without reading entire files, drastically reducing token usage and improving responsiveness."
+        }
+      },
+      {
+        "id": "37Gxuy8BRY",
+        "type": "paragraph",
+        "data": {
+          "text": "<b>Why MCP is Crucial for Low-Spec Machines:</b>\nMCP servers prevent redundant filesystem reads, offloading the \"understanding\" of your project to dedicated, often lightweight processes."
+        }
+      },
+      {
+        "id": "XIR3Xaljme",
+        "type": "paragraph",
+        "data": {
+          "text": "<b>Action:</b> Open Antigravity's <b>\"Manage MCP Servers\"</b> interface (usually next to your Global Agent Settings)."
+        }
+      },
+      {
+        "id": "HChC7rkYQH",
+        "type": "paragraph",
+        "data": {
+          "text": "<b>Set up these essential MCP servers:</b>"
+        }
+      },
+      {
+        "id": "6I_qXIGQDX",
+        "type": "list",
+        "data": {
+          "style": "ordered",
+          "meta": {},
+          "items": [
+            {
+              "content": "Laravel Boost MCP:<ul><li data-empty=\"false\">In your Laravel project terminal: composer require laravel/boost --dev</li><li data-empty=\"false\">In Antigravity's MCP Config:JSON\"laravel-boost\": {\n  \"command\": \"php\",\n  \"args\": [\"artisan\", \"boost:mcp\"]\n}\n</li><li data-empty=\"false\">Benefit: Provides the agent with instant access to Laravel routes, migrations, models, and Artisan commands without scanning files.</li></ul>",
+              "meta": {},
+              "items": []
+            },
+            {
+              "content": "Next.js DevTools MCP:<ul><li data-empty=\"false\">Ensure your Next.js dev server is running: npm run dev in your frontend project's terminal.</li><li data-empty=\"false\">In Antigravity's MCP Config:JSON\"next-devtools\": {\n  \"command\": \"npx\",\n  \"args\": [\"-y\", \"next-devtools-mcp@latest\"]\n}\n</li><li data-empty=\"false\">Benefit: Gives the agent real-time insights into your running Next.js application, including component states, route structures, and build errors.</li></ul>",
+              "meta": {},
+              "items": []
+            },
+            {
+              "content": "Database MCP (e.g., PostgreSQL/MySQL MCP):<ul><li data-empty=\"false\">(Requires specific setup based on your database type; typically involves a separate npx or composer package)</li><li data-empty=\"false\">Benefit: Allows the agent to understand your exact database schema, leading to perfect migrations and queries every time.</li></ul>",
+              "meta": {},
+              "items": []
+            }
+          ]
+        }
+      },
+      {
+        "id": "XSvMwsPPhs",
+        "type": "paragraph",
+        "data": {
+          "text": "Plaintext"
+        }
+      },
+      {
+        "id": "_byucAAMYL",
+        "type": "code",
+        "data": {
+          "code": "// Example of Antigravity's MCP configuration snippet\n{\n  \"active_mcp_servers\": {\n    \"laravel-boost\": {\n      \"command\": \"php\",\n      \"args\": [\"artisan\", \"boost:mcp\"]\n    },\n    \"next-devtools\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"next-devtools-mcp@latest\"]\n    },\n    // ... potentially other MCPs like for your database\n  }\n}\n"
+        }
+      },
+      {
+        "id": "PhFeK209nP",
+        "type": "header",
+        "data": {
+          "text": "Step 3: Defining Your Workflow – Agent Rules &amp; Presets (.agent/rules.md)",
+          "level": 3
+        }
+      },
+      {
+        "id": "_QkndBrQzE",
+        "type": "paragraph",
+        "data": {
+          "text": "This is where you teach Antigravity your preferences for documentation, code style, and how it should interact with your specific tech stack. By defining these rules <i>once</i>, you eliminate repetitive instructions and save tokens."
+        }
+      },
+      {
+        "id": "vRWrge_juo",
+        "type": "paragraph",
+        "data": {
+          "text": "<b>Action:</b> Create a file named .agent/rules.md in the root of your project."
+        }
+      },
+      {
+        "id": "QxsfB2kEBz",
+        "type": "paragraph",
+        "data": {
+          "text": "<b>Content for .agent/rules.md (Low Token / Human Docs Preset):</b>"
+        }
+      },
+      {
+        "id": "txZm9VM_V5",
+        "type": "paragraph",
+        "data": {
+          "text": "Markdown"
+        }
+      },
+      {
+        "id": "pDKlB7cBrP",
+        "type": "code",
+        "data": {
+          "code": "# Preset: Laravel + Next.js (Low Token / Human Docs)\n\n## Documentation &amp; Style\n- **No Emojis:** Never use emojis in documentation, code comments, terminal outputs, or commit messages.\n- **Documentation Location:** Store all technical guides, API explanations, and detailed feature docs in the `/docs` folder using Markdown format.\n- **README:** Keep `README.md` at the root for high-level project overviews only. Do not put detailed technical information here.\n- **Language:** Use clear, professional, concise human language. Avoid verbose or AI-sounding filler words.\n\n## Performance &amp; Token Optimization\n- **Think Before Reading:** Do not perform full directory scans. Instead, prioritize using connected MCP tools (e.g., `laravel-boost.list_routes`, `next-devtools.get_components`) to find specific information or files.\n- **Incremental Editing:** When making changes, only modify the necessary lines of code. Avoid rewriting entire files unless explicitly requested or when a major refactor is the goal.\n- **MCP Priority:** Always check connected MCP servers for project context or specific data before resorting to scanning the filesystem. This is critical for token and resource efficiency.\n- **Quiet Operations:** Prefer silent commands where possible; avoid verbose logging unless debugging.\n\n## Tech Stack Rules\n- **Backend (Laravel API):**\n    - Use Laravel 11+ syntax.\n    - Develop API-only applications; handle views in the frontend.\n    - Use `Resource` classes for all API responses to ensure consistent data structures.\n    - Employ Request classes for robust validation.\n    - Favor explicit route definitions over implicit magic.\n- **Frontend (Next.js/React):**\n    - Use Next.js 15+ App Router.\n    - Prefer React Server Components (RSC) by default for performance.\n    - Always use TypeScript with strict type checking.\n    - Utilize Tailwind CSS for all styling.\n    - Components should be functional components using arrow function syntax.\n    - Leverage React Query or SWR for data fetching and caching.\n"
+        }
+      },
+      {
+        "id": "-tnVrxByHK",
+        "type": "header",
+        "data": {
+          "text": "Step 4: Implementing a Collaborative Task Management System (.agent/tasks.md)",
+          "level": 3
+        }
+      },
+      {
+        "id": "laB6p6olrY",
+        "type": "paragraph",
+        "data": {
+          "text": "A shared task list visible to both you and the agent is vital for a smooth workflow. We'll use a simple Markdown-based Kanban approach."
+        }
+      },
+      {
+        "id": "49hg2e9CNa",
+        "type": "paragraph",
+        "data": {
+          "text": "<b>Action:</b> Create a file named .agent/tasks.md in the root of your project."
+        }
+      },
+      {
+        "id": "uDcnHdR4n6",
+        "type": "paragraph",
+        "data": {
+          "text": "<b>Content for .agent/tasks.md (Starter Task List):</b>"
+        }
+      },
+      {
+        "id": "ji8K6R9zgL",
+        "type": "paragraph",
+        "data": {
+          "text": "Markdown"
+        }
+      },
+      {
+        "id": "JerD6wlP9S",
+        "type": "code",
+        "data": {
+          "code": "# Project Roadmap: Laravel + Next.js Application\n\nThis document outlines the current development tasks, their status, and priority.\nThe agent should read this file to understand the current work context and update it upon task completion or re-prioritization.\n\n## 🟢 High Priority - Current Focus\n\n- [ ] Implement JWT Authentication for Laravel API (Backend)\n- [ ] Develop Login/Registration Pages in Next.js (Frontend)\n- [ ] Create User Profile API Endpoints (Laravel)\n- [ ] Build User Profile Page with Data Fetching (Next.js)\n\n## 🟡 Medium Priority - Next Up\n\n- [ ] Develop Leads/Contacts CRUD API (Laravel)\n- [ ] Create Leads Listing Page and Detail View (Next.js)\n- [ ] Implement Server-Side Validation Feedback for Forms (Next.js)\n\n## 🔴 Low Priority / Backlog\n\n- [ ] Integrate Real-time Notifications (e.g., WebSockets)\n- [ ] Implement Admin Dashboard UI\n- [ ] Performance Audit and Optimization for Image Assets\n- [ ] Implement AEO (Answer Engine Optimization) for key pages in Next.js\n"
+        }
+      },
+      {
+        "id": "ixBjG5jsKw",
+        "type": "paragraph",
+        "data": {
+          "text": "<b>Workflow for Syncing Tasks (.agent/workflows/sync.md):</b>"
+        }
+      },
+      {
+        "id": "evsDPJYo7g",
+        "type": "paragraph",
+        "data": {
+          "text": "Now, create a workflow for the agent to manage this task list.\n<b>Action:</b> Create a file at .agent/workflows/sync.md."
+        }
+      },
+      {
+        "id": "2v8rE0NA7x",
+        "type": "paragraph",
+        "data": {
+          "text": "Markdown"
+        }
+      },
+      {
+        "id": "fpgFWC-3Zw",
+        "type": "code",
+        "data": {
+          "code": "# /sync Workflow: Update Project Tasks\n\n1.  **Read Task List:** Read the content of `.agent/tasks.md` to understand the current task progress.\n2.  **Verify Code State:** Based on recent git changes, file modifications, and MCP server insights (e.g., `laravel-boost.list_migrations`), verify if any \"In Progress\" or \"To Do\" items appear to be completed.\n3.  **Update Document:** Modify `.agent/tasks.md`:\n    * Move completed items to a \"Done\" section (or mark with `[x]`).\n    * Adjust priority based on dependencies or newly identified critical path items.\n    * Add any new tasks that emerged from recent work.\n    * Ensure all updates adhere to the \"No Emojis\" and \"Human Language\" rules.\n4.  **Propose Next Step:** Based on the updated task list and current code state, propose the single most logical next task item for development in plain human language, including a brief justification.\n5.  **Summary:** Provide a concise summary of the overall project status and what the agent will focus on next.\n"
+        }
+      },
+      {
+        "id": "3FNCK387Cf",
+        "type": "paragraph",
+        "data": {
+          "text": "Now, when you type /sync in Antigravity, it will automatically update your project's task status!"
+        }
+      },
+      {
+        "id": "SboeZVrlB8",
+        "type": "header",
+        "data": {
+          "text": "Step 5: Crafting Essential Custom Workflows (.agent/workflows/)",
+          "level": 3
+        }
+      },
+      {
+        "id": "l0T3azEu7M",
+        "type": "paragraph",
+        "data": {
+          "text": "Custom workflows (triggered by /command) are your personal automation shortcuts. They save you from typing repetitive instructions and ensure consistency."
+        }
+      },
+      {
+        "id": "0x49eHBsUD",
+        "type": "paragraph",
+        "data": {
+          "text": "<b>Action:</b> Create files in your .agent/workflows/ directory for each of these."
+        }
+      },
+      {
+        "id": "_RSbkwXCAe",
+        "type": "list",
+        "data": {
+          "style": "ordered",
+          "meta": {},
+          "items": [
+            {
+              "content": "/bridge-api.md (API Bridge Workflow):Markdown# /bridge-api Workflow: Create Frontend API Bridge\n\n1.  **Identify Model:** You will be prompted to provide a Laravel Model name (e.g., `User`, `Lead`).\n2.  **Scan Laravel Model:** Use `laravel-boost.get_model_schema` to retrieve the database schema and fillable properties of the specified Laravel Model.\n3.  **Generate TypeScript Interface:** Create a corresponding TypeScript interface file (e.g., `src/types/User.ts`) based on the model's schema.\n4.  **Generate Next.js API Route:** If appropriate, generate a Next.js API route (`app/api/your-model/[id]/route.ts`) that mirrors basic CRUD operations, consuming the Laravel API.\n5.  **Generate React Query Hook:** Create a React Query hook (e.g., `src/hooks/useUsers.ts`) to fetch, create, update, and delete data for the specified model, ready for your Next.js components.\n6.  **Summary:** Present the generated files and instructions on how to integrate them into your Next.js application.\n",
+              "meta": {},
+              "items": []
+            },
+            {
+              "content": "/docs-update.md (Documentation Update Workflow):Markdown# /docs-update Workflow: Generate/Update Project Documentation\n\n1.  **Scan Recent Changes:** Analyze recent `git diff` or newly created files in the current directory and related folders.\n2.  **Identify Context:** Determine if the changes relate to a new feature, a bug fix, or a refactor.\n3.  **Locate/Create Doc File:** Find the most relevant Markdown file in the `/docs` folder or propose creating a new one (e.g., `/docs/Features/JWT_Auth.md`).\n4.  **Generate/Update Content:** Write or update the documentation in the identified file.\n5.  **Review:** Present the proposed documentation changes for review, ensuring no emojis are used and the language is clear and professional.\n",
+              "meta": {},
+              "items": []
+            },
+            {
+              "content": "/health.md (Project Health Check Workflow):Markdown# /health Workflow: Check Project Server Status\n\n1.  **Check Laravel Backend:** Attempt to connect to `http://localhost:8000` (or your Laravel dev server port). Report status (running/not running).\n2.  **Check Next.js Frontend:** Attempt to connect to `http://localhost:3000` (or your Next.js dev server port). Report status (running/not running).\n3.  **Database Connection:** (If MCP is enabled) Use the database MCP to verify a connection to the configured database.\n4.  **Summary:** Provide a concise report on the operational status of your development environment components.\n",
+              "meta": {},
+              "items": []
+            }
+          ]
+        }
+      },
+      {
+        "id": "81at9DQ_ri",
+        "type": "header",
+        "data": {
+          "text": "Conclusion: A Lean, Mean, AI-Powered Dev Machine",
+          "level": 3
+        }
+      },
+      {
+        "id": "RHBjE96un1",
+        "type": "paragraph",
+        "data": {
+          "text": "By carefully configuring Antigravity's global settings, leveraging MCP servers, establishing clear workspace rules, and creating intelligent workflows, you transform your low-to-mid-spec laptop into a highly efficient, AI-assisted development powerhouse. You'll spend less time on boilerplate, reduce mental overhead with integrated task management, and ensure your documentation is always consistent and clear."
+        }
+      },
+      {
+        "id": "Pq99SW0XNj",
+        "type": "paragraph",
+        "data": {
+          "text": "This setup not only optimizes Antigravity for resource usage and token consumption but also fosters a natural, productive partnership between you and your AI assistant. Happy coding!"
+        }
+      }
+    ],
+    "version": "2.31.0"
+  },
+  "status": "published",
+  "created_at": "2026-01-12 05:34:47",
+  "updated_at": "2026-01-12 05:34:47",
+  "seo": {
+    "post_id": 8,
+    "meta_title": "Unlock Peak Productivity: Setting Up Antigravity for Laravel & Next.js on Any Machine",
+    "meta_description": "",
+    "og_image": null,
+    "keywords": "tech, code, singularity, Laravel"
+  }
+}
