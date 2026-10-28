@@ -1,17 +1,17 @@
-name: Build and deploy portfolio to GitHub Pages
+name: Build and deploy static portfolio to GitHub Pages
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
     paths:
-      - 'singularity-cms/**'
+      - 'index.html'
+      - 'assets/images/**'
       - '.github/workflows/deploy-pages.yml'
   pull_request:
-    branches:
-      - master
+    branches: [master]
     paths:
-      - 'singularity-cms/**'
+      - 'index.html'
+      - 'assets/images/**'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
@@ -25,30 +25,16 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: singularity-cms
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - name: Assemble static site
+        run: |
+          mkdir -p _site/assets/images
+          cp index.html _site/index.html
+          cp assets/images/amrshah.jpg _site/assets/images/amrshah.jpg
+      - uses: actions/upload-pages-artifact@v3
         with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: singularity-cms/package-lock.json
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build site
-        run: npm run build
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: singularity-cms/dist
+          path: _site
 
   deploy:
     if: github.event_name != 'pull_request'
