@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 
 // Main Site components
 import SingularityHeader from './components/Header/SingularityHeader';
@@ -18,7 +17,6 @@ import Home from './pages/Home';
 
 function App() {
   return (
-    <HelmetProvider>
       <Router>
         <div className="app-container">
           <Routes>
@@ -43,7 +41,6 @@ function App() {
           </Routes>
         </div>
       </Router>
-    </HelmetProvider>
   );
 }
 
