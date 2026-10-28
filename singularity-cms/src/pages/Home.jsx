@@ -129,6 +129,31 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* Education Section */}
+            <div id="education" style={{ padding: '72px 64px', background: '#161b22', borderTop: '1px solid #30363d', borderBottom: '1px solid #30363d' }}>
+                <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                        <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#fff' }}>Education</h2>
+                    </div>
+                    <div className="w3-row-padding">
+                        <div className="w3-half w3-margin-bottom">
+                            <div style={{ background: '#0d1117', padding: '28px', borderRadius: '12px', border: '1px solid #30363d', height: '100%' }}>
+                                <h3 style={{ color: '#fff', marginTop: 0 }}>MSc in Computer Science</h3>
+                                <p style={{ color: '#58a6ff', fontWeight: '600' }}>Mohammad Ali Jinnah University, Islamabad</p>
+                                <p style={{ color: '#8b949e', marginBottom: 0 }}>2003–2007 · Now Capital University of Science & Technology (CUST)</p>
+                            </div>
+                        </div>
+                        <div className="w3-half w3-margin-bottom">
+                            <div style={{ background: '#0d1117', padding: '28px', borderRadius: '12px', border: '1px solid #30363d', height: '100%' }}>
+                                <h3 style={{ color: '#fff', marginTop: 0 }}>Postgraduate Higher National Diploma (PGHND) in Computer Science</h3>
+                                <p style={{ color: '#58a6ff', fontWeight: '600' }}>National Institute of Science & Technical Education (NISTE), H-8, Islamabad</p>
+                                <p style={{ color: '#8b949e', marginBottom: 0 }}>2001–2002</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* Portfolio Section */}
             <div id="portfolio" style={{ padding: '100px 64px', background: '#0d1117' }}>
                 <div style={{ textAlign: 'center', marginBottom: '64px' }}>
@@ -236,8 +261,9 @@ const Home = () => {
                         <p style={{ fontSize: '1.2rem', color: '#8b949e', margin: '24px 0 48px' }}>Ready to discuss your next project or architectural challenge?</p>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><MapPin size={24} color="#58a6ff" /> Bahria Town, Islamabad, Pakistan</div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Phone size={24} color="#58a6ff" /> +92 334 5112969</div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Mail size={24} color="#58a6ff" /> amr.shah@gmail.com</div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Phone size={24} color="#58a6ff" /> <a href="tel:+923345112969" style={{ color: 'inherit', textDecoration: 'none' }}>+92 334 5112969</a></div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Mail size={24} color="#58a6ff" /> <a href="mailto:amr.shah@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>amr.shah@gmail.com</a></div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Code size={24} color="#58a6ff" /> <a href="https://github.com/amrshah" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>GitHub</a></div>
                         </div>
                     </div>
                     <div className="w3-half w3-container">
