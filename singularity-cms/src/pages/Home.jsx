@@ -40,12 +40,10 @@ const Home = () => {
         { year: '2026', name: 'OrmEasy OS', tech: 'Laravel, WhatsApp APIs, PWA, Realtime Kitchen Display', status: 'In Development', featured: true, category: 'Business SaaS', url: 'https://github.com/amrshah/Whatsapp-Order-bot' },
         { year: '2026', name: 'Laravel Tenant Engine', tech: 'Laravel, Multi-tenancy, Sanctum, RBAC/ABAC', status: 'Open Source', featured: true, category: 'SaaS Infrastructure', url: 'https://github.com/amrshah/Larave-Tenant-Engine' },
         { year: '2026', name: 'Clinic Flow', tech: 'Next.js, TypeScript, Tailwind, Veterinary Workflows', status: 'Prototype', featured: true, category: 'Vertical SaaS', url: 'https://github.com/amrshah/clinic-ant' },
-        { year: '2026', name: 'Alamia AI Bridge', tech: 'Provider Routing, OpenRouter, Groq, SambaNova, Ollama', status: 'R&D', featured: false, category: 'AI Infrastructure', url: 'https://github.com/amrshah/Alamia-AI-Bridge' },
         { year: '2026', name: 'NFV Readiness Standard', tech: 'Architecture Principles, Evidence-Based Readiness', status: 'Draft', featured: false, category: 'Engineering Strategy', url: 'https://github.com/amrshah/NFV-V1.0' },
         { year: '2026', name: 'Detectra API', tech: 'Python, FastAPI, YOLOv8, Docker', status: 'Experimental', featured: false, category: 'Computer Vision', url: 'https://github.com/amrshah/detectra-api' },
         { year: '2025', name: 'Silver AI', tech: 'PHP, SQLite, Google OAuth, Cloudflare AI Gateway', status: 'Prototype', featured: false, category: 'AI Applications', url: 'https://github.com/amrshah/silver-ai' },
         { year: '2024', name: 'AlamiaConnect CRM', tech: 'Laravel, CRM Workflows, SaaS Architecture', status: 'Product R&D', featured: false, category: 'Business SaaS', url: 'https://alamiaconnect.com' },
-        { year: '2023', name: 'Laravel AI Ops', tech: 'Laravel, Modular AI Pipelines, Retrieval, Cost Controls', status: 'R&D', featured: false, category: 'AI Engineering', url: 'https://github.com/amrshah/laravel-ai-ops' },
         { year: '2022', name: 'Laravel ARBAC Package', tech: 'PHP, Laravel, Authorization', status: 'Historical', featured: false, category: 'Open Source', url: 'https://github.com/amrshah' },
         { year: '2021', name: 'WordPress Utility Plugins', tech: 'PHP, WordPress, JavaScript', status: 'Historical', featured: false, category: 'Web Development', url: 'https://github.com/amrshah' }
     ];
