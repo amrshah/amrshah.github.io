@@ -1,4 +1,5 @@
 name: Build and deploy portfolio to GitHub Pages
+# PRs validate the build; only pushes to the default branch deploy.
 
 on:
   push:
