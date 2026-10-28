@@ -132,7 +132,7 @@ const Home = () => {
             {/* Portfolio Section */}
             <div id="portfolio" style={{ padding: '100px 64px', background: '#0d1117' }}>
                 <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-                    <h2 style={{ fontSize: '3rem', fontWeight: '800', color: '#fff' }}>Impact Portfolio</h2>
+                    <h2 style={{ fontSize: '3rem', fontWeight: '800', color: '#fff' }}>Selected Work &amp; Product R&amp;D</h2>
                     <p style={{ color: '#8b949e', fontSize: '1.2rem' }}>A selection of public repositories and product R&D. Status labels distinguish prototypes and experiments from completed work.</p>
                 </div>
 
