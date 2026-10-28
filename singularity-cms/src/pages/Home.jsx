@@ -20,44 +20,32 @@ const Home = () => {
                     setRecentPosts(staticData.slice(0, 3));
                 }
             } catch (error) {
-                console.error('Error fetching recent posts:', error);
+                // GitHub Pages has no local CMS API; fall back to the published static index.
+                try {
+                    const staticResponse = await fetch('/api/posts.json');
+                    if (staticResponse.ok) {
+                        const staticData = await staticResponse.json();
+                        setRecentPosts(staticData.slice(0, 3));
+                    }
+                } catch (staticError) {
+                    console.error('Could not load recent posts:', staticError);
+                }
             }
         };
         fetchRecentPosts();
     }, []);
 
     const allProjects = [
-        // 2024
-        { year: '2024', name: 'AgentVerse', tech: 'React, Node.js, Gemini AI', status: 'In-Progress', featured: true, category: 'AI' },
-        { year: '2024', name: 'AlamiaConnect CRM', tech: 'Laravel, React, MySQL', status: 'In-Progress', featured: true, category: 'Laravel' },
-        { year: '2024', name: 'Gym Management System (v2)', tech: 'Laravel, Refactoring', status: 'In-Progress', featured: true, category: 'Laravel' },
-        { year: '2024', name: 'Laamiya AI Assistant', tech: 'Python, Gemini, Streamlit', status: 'In-Progress', featured: false, category: 'AI' },
-        { year: '2024', name: 'Alamia EasyDash', tech: 'Laravel Core, UI/UX', status: 'In-Progress', featured: false, category: 'Laravel' },
-        { year: '2024', name: 'Fleet Manager KSA', tech: 'Laravel, GPS API', status: 'In-Progress', featured: false, category: 'Laravel' },
-
-        // 2023
-        { year: '2023', name: 'Lead Qualification Expert', tech: 'WP, PHP, OpenAI', status: 'Completed', featured: true, category: 'AI' },
-        { year: '2023', name: 'AgencyOS (Business OS)', tech: 'Laravel, Vue.js', status: 'In-Progress', featured: false, category: 'Laravel' },
-        { year: '2023', name: 'Silver Nova Suite', tech: 'WordPress, React', status: 'In-Progress', featured: false, category: 'Wordpress' },
-        { year: '2023', name: 'WP Dynamic Content Pro', tech: 'PHP, Elementor API', status: 'In-Progress', featured: false, category: 'Wordpress' },
-        { year: '2023', name: 'Gitex Toolkit', tech: 'Laravel, Event Management', status: 'In-Progress', featured: false, category: 'Laravel' },
-
-        // 2022
-        { year: '2022', name: 'Laravel ARBAC Package', tech: 'PHP, Laravel Core', status: 'Completed', featured: false, category: 'Laravel' },
-        { year: '2022', name: 'Alamia Accounts ERP', tech: 'Laravel, Multi-tenancy', status: 'In-Progress', featured: false, category: 'Laravel' },
-        { year: '2022', name: 'Asset Management System', tech: 'Laravel, Tracking', status: 'In-Progress', featured: false, category: 'Laravel' },
-
-        // 2021
-        { year: '2021', name: 'WP Menu Manager', tech: 'WordPress, JS', status: 'Completed', featured: false, category: 'Wordpress' },
-        { year: '2021', name: 'WP NoIndex MU-Plugin', tech: 'PHP, WP Core', status: 'Completed', featured: false, category: 'Wordpress' },
-
-        // Legacy/Historical
-        { year: '2018', name: 'Visa Consultant Platform', tech: 'PHP, CodeIgniter', status: 'Completed', featured: false, category: 'Laravel' },
-        { year: '2018', name: 'Support Ticket System', tech: 'Laravel, Vue', status: 'Completed', featured: false, category: 'Laravel' },
-        { year: '2017', name: 'Helping Hands NGO', tech: 'WordPress Theme', status: 'Completed', featured: false, category: 'Wordpress' },
-        { year: '2013', name: 'Active Fitness Generator', tech: 'PHP Engine', status: 'Completed', featured: false, category: 'Laravel' },
-        { year: '2010', name: 'Application Generator', tech: 'C#, .NET Core', status: 'Completed', featured: false, category: 'Misc' },
-        { year: '2009', name: 'AWS Price Intel Tool', tech: 'C#, AWS ECS', status: 'Completed', featured: false, category: 'AI' }
+        { year: '2026', name: 'Agentic Software Development Pipeline', tech: 'Agent Skills, JSON Schema, Validation, Observability', status: 'R&D', featured: true, category: 'AI Engineering', url: 'https://github.com/amrshah/production-grade-agent-skills' },
+        { year: '2026', name: 'OrmEasy OS', tech: 'Laravel, WhatsApp APIs, PWA, Realtime Kitchen Display', status: 'In Development', featured: true, category: 'Business SaaS', url: 'https://github.com/amrshah/Whatsapp-Order-bot' },
+        { year: '2026', name: 'Laravel Tenant Engine', tech: 'Laravel, Multi-tenancy, Sanctum, RBAC/ABAC', status: 'Open Source', featured: true, category: 'SaaS Infrastructure', url: 'https://github.com/amrshah/Larave-Tenant-Engine' },
+        { year: '2026', name: 'Clinic Flow', tech: 'Next.js, TypeScript, Tailwind, Veterinary Workflows', status: 'Prototype', featured: true, category: 'Vertical SaaS', url: 'https://github.com/amrshah/clinic-ant' },
+        { year: '2026', name: 'NFV Readiness Standard', tech: 'Architecture Principles, Evidence-Based Readiness', status: 'Draft', featured: false, category: 'Engineering Strategy', url: 'https://github.com/amrshah/NFV-V1.0' },
+        { year: '2026', name: 'Detectra API', tech: 'Python, FastAPI, YOLOv8, Docker', status: 'Experimental', featured: false, category: 'Computer Vision', url: 'https://github.com/amrshah/detectra-api' },
+        { year: '2025', name: 'Silver AI', tech: 'PHP, SQLite, Google OAuth, Cloudflare AI Gateway', status: 'Prototype', featured: false, category: 'AI Applications', url: 'https://github.com/amrshah/silver-ai' },
+        { year: '2024', name: 'AlamiaConnect CRM', tech: 'Laravel, CRM Workflows, SaaS Architecture', status: 'Product R&D', featured: false, category: 'Business SaaS', url: 'https://alamiaconnect.com' },
+        { year: '2022', name: 'Laravel ARBAC Package', tech: 'PHP, Laravel, Authorization', status: 'Historical', featured: false, category: 'Open Source', url: 'https://github.com/amrshah' },
+        { year: '2021', name: 'WordPress Utility Plugins', tech: 'PHP, WordPress, JavaScript', status: 'Historical', featured: false, category: 'Web Development', url: 'https://github.com/amrshah' }
     ];
 
     return (
@@ -70,14 +58,13 @@ const Home = () => {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '360px', margin: '0 auto', width: '100%' }}>
                         <a href="#about" className="btn-premium" style={{ textDecoration: 'none', justifyContent: 'center', fontSize: '1.1rem' }}>Initiate Connection</a>
                         <a href="#experience" className="w3-button w3-dark-grey w3-round-large w3-padding-16" style={{ border: '1px solid #30363d', color: '#fff' }}>Professional Journey</a>
-                        <a href="#portfolio" className="w3-button w3-dark-grey w3-round-large w3-padding-16" style={{ border: '1px solid #30363d', color: '#fff' }}>Impact Portfolio</a>
+                        <a href="#portfolio" className="w3-button w3-dark-grey w3-round-large w3-padding-16" style={{ border: '1px solid #30363d', color: '#fff' }}>Selected Work & Product R&D</a>
                         <Link to="/blog" className="w3-button w3-indigo w3-round-large w3-padding-16" style={{ background: '#1f6feb', fontWeight: 'bold' }}>Research & Insights</Link>
                     </div>
 
                     <div style={{ marginTop: '64px', fontStyle: 'italic', opacity: 0.9, borderLeft: '4px solid #1f6feb', paddingLeft: '24px', textAlign: 'left', margin: '64px auto 0', maxWidth: '440px' }}>
                         <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: '#e6edf3', margin: '0' }}>
-                            "Where innovation meets imagination—a journey from structured code to boundless creativity.
-                            Welcome to my Singularity."
+                            "Software engineering, AI product R&D, SaaS architecture, and technical delivery—grounded in what can be built, tested, and operated."
                         </p>
                         <div style={{ color: '#58a6ff', fontWeight: 'bold', marginTop: '12px', fontSize: '1rem' }}>— Ali Raza</div>
                     </div>
@@ -90,10 +77,11 @@ const Home = () => {
                             <img src="/assets/images/amrshah.jpg" alt="Ali Raza" style={{ width: '200px', height: '200px', borderRadius: '50%', border: '4px solid #30363d', objectFit: 'cover' }} />
                         </div>
                         <div style={{ fontSize: '1.15rem', lineHeight: '1.8' }}>
-                            <p>Hello! I'm a software architect and full-stack developer with over 15 years of experience transforming complex challenges into elegant solutions.</p>
-                            <p>My passion lies in building robust, scalable applications and creating intelligent development tools. From enterprise systems to innovative web platforms, I specialize in architecting solutions that drive real business value.</p>
-                            <p>Currently, I focus on leveraging cutting-edge frameworks and emerging technologies to craft tools that streamline development workflows.</p>
-                            <p style={{ color: '#58a6ff', fontWeight: '600', marginTop: '32px' }}>Let's connect and explore how we can build something extraordinary together.</p>
+                            <p>I am a software developer and technical leader working across business applications, SaaS platforms, backend systems, APIs, and AI-enabled products.</p>
+                            <p>My experience spans PHP/Laravel development, enterprise and back-office workflows, mobile API backends, server administration, and earlier C/C++ work involving CUDA, high-performance computing, and distributed systems.</p>
+                            <p>Today, as Senior Software Development Manager at Silver Ant Marketing / VexterSoft / IZOC, I combine hands-on product development with architecture, R&D, prioritization, and delivery coordination.</p>
+                            <p>My engineering approach is pragmatic: keep systems understandable, use AI where it adds value, validate outputs, and distinguish prototypes from tested and production-proven software.</p>
+                            <p style={{ color: '#58a6ff', fontWeight: '600', marginTop: '32px' }}>Open to relevant software engineering, AI application, SaaS architecture, and technical leadership opportunities.</p>
                         </div>
                     </div>
                 </div>
@@ -120,11 +108,13 @@ const Home = () => {
                         <h2 style={{ fontSize: '2rem', fontWeight: '800', color: '#fff', marginBottom: '8px' }}>Career Highlights</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '40px' }}>
                             {[
-                                { date: '2012–Present', role: 'Principal Consultant', detail: 'Enterprise solutions and strategic consulting.' },
-                                { date: '2010–2012', role: 'Freelance Developer', detail: 'vWorker & Freelancer.com global platform specialization.' },
-                                { date: '2008–2010', role: 'Software Engineer', detail: 'Full-stack development for AU enterprise clients.' },
-                                { date: '2005–2008', role: 'Master of CS', detail: 'Advanced software architecture study.' },
-                                { date: '2002–2005', role: 'Core Programming', detail: 'Intensive immersion in C/C++.' }
+                                { date: 'Apr 2025–Present', role: 'Senior Software Development Manager', detail: 'Silver Ant Marketing / VexterSoft / IZOC Solutions. Software product R&D, architecture, development planning, and technical delivery.' },
+                                { date: '2021/22–Mid 2024', role: 'Backend Development & Server Administration', detail: 'KSA-based company and other clients. PHP/Laravel back-office systems, mobile API backends, and server operations.' },
+                                { date: '2018/19–2020', role: 'Lab Engineer', detail: 'MYU. CUDA, C/C++, HPC labs, and distributed computing.' },
+                                { date: '2016–2017', role: 'IT Manager', detail: 'Atif Distributors, medicine distribution, Azad Kashmir.' },
+                                { date: '2014–2016', role: 'Tally ERP Development & Support', detail: 'Work with Ali Muzaffar at microSOFT Ocean Software House.' },
+                                { date: 'Feb 2008–Oct 2010', role: 'Software Engineer', detail: 'Sofnix; full-stack development and enterprise application work.' },
+                                { date: 'Ongoing Product R&D', role: 'Independent Software Products', detail: 'Parallel product experiments in SaaS, AI integrations, developer tooling, and business automation.' }
                             ].map((item, idx) => (
                                 <div key={idx} style={{ background: '#161b22', padding: '24px', borderRadius: '12px', border: '1px solid #30363d', textAlign: 'left', display: 'flex', gap: '20px' }}>
                                     <div style={{ background: 'rgba(31, 111, 235, 0.2)', color: '#58a6ff', padding: '10px', borderRadius: '8px', height: 'fit-content', fontWeight: 'bold' }}>{item.date}</div>
@@ -139,11 +129,36 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* Education Section */}
+            <div id="education" style={{ padding: '72px 64px', background: '#161b22', borderTop: '1px solid #30363d', borderBottom: '1px solid #30363d' }}>
+                <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                        <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#fff' }}>Education</h2>
+                    </div>
+                    <div className="w3-row-padding">
+                        <div className="w3-half w3-margin-bottom">
+                            <div style={{ background: '#0d1117', padding: '28px', borderRadius: '12px', border: '1px solid #30363d', height: '100%' }}>
+                                <h3 style={{ color: '#fff', marginTop: 0 }}>MSc in Computer Science</h3>
+                                <p style={{ color: '#58a6ff', fontWeight: '600' }}>Mohammad Ali Jinnah University, Islamabad</p>
+                                <p style={{ color: '#8b949e', marginBottom: 0 }}>2003–2007 · Now Capital University of Science & Technology (CUST)</p>
+                            </div>
+                        </div>
+                        <div className="w3-half w3-margin-bottom">
+                            <div style={{ background: '#0d1117', padding: '28px', borderRadius: '12px', border: '1px solid #30363d', height: '100%' }}>
+                                <h3 style={{ color: '#fff', marginTop: 0 }}>Postgraduate Higher National Diploma (PGHND) in Computer Science</h3>
+                                <p style={{ color: '#58a6ff', fontWeight: '600' }}>National Institute of Science & Technical Education (NISTE), H-8, Islamabad</p>
+                                <p style={{ color: '#8b949e', marginBottom: 0 }}>2001–2002</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* Portfolio Section */}
             <div id="portfolio" style={{ padding: '100px 64px', background: '#0d1117' }}>
                 <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-                    <h2 style={{ fontSize: '3rem', fontWeight: '800', color: '#fff' }}>Impact Portfolio</h2>
-                    <p style={{ color: '#8b949e', fontSize: '1.2rem' }}>Architecting the future through AI and robust software engineering.</p>
+                    <h2 style={{ fontSize: '3rem', fontWeight: '800', color: '#fff' }}>Selected Work &amp; Product R&amp;D</h2>
+                    <p style={{ color: '#8b949e', fontSize: '1.2rem' }}>A selection of public repositories and product R&D. Status labels distinguish prototypes and experiments from completed work.</p>
                 </div>
 
                 {/* Featured Products Cards */}
@@ -164,7 +179,9 @@ const Home = () => {
                                 <div style={{ position: 'absolute', top: '16px', right: '16px' }}><Star size={20} color="#f2c94c" fill="#f2c94c" /></div>
                                 <div>
                                     <span style={{ color: '#58a6ff', fontSize: '0.75rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '1px' }}>{proj.category}</span>
-                                    <h3 style={{ color: '#fff', fontSize: '1.5rem', marginTop: '8px', marginBottom: '12px' }}>{proj.name}</h3>
+                                    <h3 style={{ color: '#fff', fontSize: '1.5rem', marginTop: '8px', marginBottom: '12px' }}>
+                                        {proj.url ? <a href={proj.url} target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>{proj.name}</a> : proj.name}
+                                    </h3>
                                     <p style={{ color: '#8b949e', fontSize: '0.9rem' }}>{proj.tech}</p>
                                 </div>
                                 <span style={{ color: proj.status === 'Completed' ? '#3fb950' : '#f2c94c', fontWeight: 'bold', fontSize: '0.85rem' }}>● {proj.status}</span>
@@ -244,8 +261,9 @@ const Home = () => {
                         <p style={{ fontSize: '1.2rem', color: '#8b949e', margin: '24px 0 48px' }}>Ready to discuss your next project or architectural challenge?</p>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><MapPin size={24} color="#58a6ff" /> Bahria Town, Islamabad, Pakistan</div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Phone size={24} color="#58a6ff" /> +92 334 5112969</div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Mail size={24} color="#58a6ff" /> amr.shah@gmail.com</div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Phone size={24} color="#58a6ff" /> <a href="tel:+923345112969" style={{ color: 'inherit', textDecoration: 'none' }}>+92 334 5112969</a></div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Mail size={24} color="#58a6ff" /> <a href="mailto:amr.shah@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>amr.shah@gmail.com</a></div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Code size={24} color="#58a6ff" /> <a href="https://github.com/amrshah" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>GitHub</a> · <a href="https://www.linkedin.com/in/ali-raza-843192114" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>LinkedIn</a></div>
                         </div>
                     </div>
                     <div className="w3-half w3-container">
@@ -264,7 +282,7 @@ const Home = () => {
             </div>
 
             <footer style={{ padding: '40px 64px', background: '#0d1117', borderTop: '1px solid #30363d', textAlign: 'center', color: '#8b949e' }}>
-                <p>© 2025 Ali Raza (amrshah). Architecting with precision & passion.</p>
+                <p>© 2026 Ali Raza (amrshah). Software engineering, AI product R&D, and SaaS architecture.</p>
             </footer>
         </div>
     );
