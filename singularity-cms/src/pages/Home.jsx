@@ -263,7 +263,7 @@ const Home = () => {
                             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><MapPin size={24} color="#58a6ff" /> Bahria Town, Islamabad, Pakistan</div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Phone size={24} color="#58a6ff" /> <a href="tel:+923345112969" style={{ color: 'inherit', textDecoration: 'none' }}>+92 334 5112969</a></div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Mail size={24} color="#58a6ff" /> <a href="mailto:amr.shah@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>amr.shah@gmail.com</a></div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Code size={24} color="#58a6ff" /> <a href="https://github.com/amrshah" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>GitHub</a></div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><Code size={24} color="#58a6ff" /> <a href="https://github.com/amrshah" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>GitHub</a> · <a href="https://www.linkedin.com/in/ali-raza-843192114" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>LinkedIn</a></div>
                         </div>
                     </div>
                     <div className="w3-half w3-container">
