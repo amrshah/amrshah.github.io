@@ -21,7 +21,7 @@ Use these rules when selecting work for public presentation:
 | Restaurant ordering and operations | WhatsApp ordering, POS, kitchen display, customer records and rider/delivery workflows | Active product development | Focus on small restaurants and cloud kitchens; distinguish implemented from planned modules |
 | ZelixVet | Veterinary practice management: pets, owners, appointments, clinical notes, billing and inventory | Active development | Describe Odoo-based implementation; avoid claiming production adoption without evidence |
 | Kamal Express TravelOS | Travel agency operations, visa/package bookings, staff workflows and customer communication | Product development | Keep customer and applicant data private |
-| CrickIQ / cricket products | Cricket-focused product, game and analytics work | Active R&D | Link to public repositories only after checking current state and naming |
+| CrickIQ (within GAMEPAD.win) | A daily Wordle-style cricket guessing game: identify a mystery cricket entity using limited guesses and progressive clues | Active game development | Describe as a game, not an analytics platform; keep admin tooling separate from player-facing gameplay |
 | Alamia AdmissionsOS | Admissions workflow discovery and companion-app planning | Discovery / early product design | Describe as discovery and design work, not a launched admissions platform |
 | 360Workflows | Workflow and AI utility concepts, including chat-with-documents and skill-oriented product ideas | Exploration / product R&D | Name only components with a working public demo |
 
