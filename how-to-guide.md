@@ -1,103 +1,70 @@
-# 🌌 Singularity System: How-To Guide
+# Portfolio Repository Guide
 
-Welcome to the **Singularity System**—a unified, high-performance ecosystem for your personal portfolio and research blog. This system combines a modern React frontend with a local SQLite-powered CMS for seamless content management.
+This repository contains the source for the public personal portfolio:
 
----
+- **Live site:** https://amrshah.github.io
+- **Default branch:** `master`
+- **Hosting:** GitHub Pages
+- **Deployment:** GitHub Actions
+- **Current frontend:** lightweight static HTML, CSS and JavaScript
 
-## 🏗️ System Architecture
+## Source of truth
 
-The project is split into two main environments:
+The deployed website is currently maintained directly in the repository root:
 
-1.  **Development Environment (Local)**:
-    *   **Frontend**: React (Vite) running on `http://localhost:5173`.
-    *   **Backend**: Node/Express server on `http://localhost:5555`.
-    *   **Database**: SQLite (`database.sqlite`) stores your blog posts and SEO meta.
-    *   **CMS**: "Mission Control" interface at `/admin` for creating and editing content.
+- `index.html` — complete portfolio page, including styles and navigation behavior.
+- `assets/images/amrshah.jpg` — profile image used by the page.
+- `.github/workflows/deploy-pages.yml` — validates pull requests and deploys changes pushed to `master`.
 
-2.  **Production Environment (GitHub Pages)**:
-    *   **Static Site**: The built React app.
-    *   **Static Data**: Blog posts are served as `.json` files from the `/public/api/` folder.
-    *   **Security**: The private CMS backend is never exposed to the public internet.
+There is currently **no active React/Vite application, Singularity CMS, Express backend, SQLite database, or admin dashboard** in the production portfolio workflow. Older CMS documentation and implementation were retired when the portfolio was simplified to a static site.
 
----
+## Local development
 
-## 🚀 Getting Started
+No build step or package installation is required for the current site.
 
-### 1. Launch the Engine
-To run your system locally, you need to start both the frontend and the CMS backend.
+1. Clone the repository.
+2. Open `index.html` directly in a browser, or run a local static server from the repository root.
+3. Edit the HTML/CSS/JavaScript in `index.html`.
+4. Keep images and other static assets under `assets/`.
+5. Test desktop and mobile layouts before opening a pull request.
 
-1.  **Start the Backend**:
-    ```bash
-    cd singularity-cms
-    node server/index.js
-    ```
-2.  **Start the Frontend**:
-    ```bash
-    cd singularity-cms
-    npm run dev
-    ```
+The portfolio is intentionally lightweight. Do not introduce a frontend framework, build system, database or CMS unless there is a concrete content-management requirement.
 
-### 2. Access "Mission Control" (CMS)
-Navigate to `http://localhost:5173/admin` to manage your insights.
-*   **Create Post**: Use the "Write New Insight" button or navigate to "Write Post".
-*   **Editor**: Features a rich-text Editor.js interface (Headers, Code, Lists, Tables, etc.).
-*   **Status**: Save as **Draft** for work-in-progress or **Published** to make it live.
+## Deployment workflow
 
----
+The workflow in `.github/workflows/deploy-pages.yml`:
 
-## 🔄 Content Synchronization
+1. Runs for pull requests targeting `master` when the portfolio page, image assets or workflow change.
+2. Assembles a clean `_site` artifact containing `index.html` and the required profile image.
+3. Uploads the artifact for GitHub Pages.
+4. Deploys only for pushes to `master`; pull requests validate the artifact but do not publish it.
+5. Supports manual execution through `workflow_dispatch`.
 
-Because GitHub Pages does not support databases, we use a **Static Sync** process.
+GitHub repository configuration should use **Settings → Pages → Build and deployment → Source → GitHub Actions**.
 
-1.  **Monitor Sync Status**: Go to the **Settings** page in Mission Control. It will tell you if your static assets are "Out of Sync" after you've made changes.
-2.  **Sync Now**: Click the **"Sync to Static Assets"** button. This script:
-    *   Exports all published posts from SQLite to `public/api/*.json`.
-    *   Refreshes the `posts.json` index.
-3.  **Manual Sync**: Alternatively, you can run `npm run sync` from the command line while the server is running.
+The workflow intentionally publishes only the curated website files. Repository documentation, planning notes and source history are not copied into the public Pages artifact.
 
----
+## Content management direction
 
-## 📨 Contact Form (Formspree)
+The current portfolio is a static professional profile and does not need a CMS.
 
-Your contact form is now functional!
-*   **EndPoint**: It sends data to `https://formspree.io/f/xvgzbgww`.
-*   **Inbox**: Submissions go directly to `am.rshah@gmail.com`.
-*   **Setup**: The first time someone submits a message, Formspree will send you an email to verify the connection. Click the link in that email to activate it.
+If a research blog or frequently updated editorial section is reintroduced, evaluate a separate Cloudflare-native CMS such as [Flare CMS](https://github.com/jjaimealeman/flarecms). Treat it as a future content-management integration, not as a dependency of the portfolio frontend.
 
----
+Before adopting it, verify:
+- editorial workflow, drafts and publishing controls;
+- content export/API and static-site integration;
+- image/media handling and storage;
+- authentication and access control;
+- maintenance activity and operational cost.
 
-## 🌍 Portfolio Customization
+Keep the public portfolio available as a static site if the CMS is unavailable. Never expose CMS credentials or private administrative endpoints in the frontend.
 
-The main portfolio page is located at `src/pages/Home.jsx`. It's designed to be dynamic:
-*   **Hero Animation**: Managed by `src/components/Header/SingularityHeader.jsx`.
-*   **Recent Insights**: The "Research & Insights" section automatically pulls the latest 3 published posts.
+## Change checklist
 
----
-
-## 📦 Deployment to GitHub Pages
-
-To deploy your site:
-
-1.  **Sync your content**: Ensure you have clicked "Sync" in Mission Control.
-2.  **Build the project**:
-    ```bash
-    npm run build
-    ```
-3.  **Move to Root**: Copy the contents of `singularity-cms/dist` to the root `amrshah.github.io` directory.
-4.  **Push to GitHub**:
-    ```bash
-    git add .
-    git commit -m "Deploy latest insights"
-    git push origin main
-    ```
-
----
-
-## 🛠️ Tech Stack Reference
-*   **Frontend**: React, React Router, Lucide-Icons, W3.CSS.
-*   **Animation**: Anime.js v4.
-*   **CMS Engine**: Node.js, Better-SQLite3, Express.
-*   **Content Editor**: Editor.js.
-
----
-*Architected with precision & passion by Ali Raza.*
+- [ ] Verify all project and social links.
+- [ ] Check responsive layout at mobile and desktop widths.
+- [ ] Check keyboard navigation and visible focus states.
+- [ ] Confirm page title, description and social metadata.
+- [ ] Confirm all referenced assets exist.
+- [ ] Confirm the GitHub Actions workflow passes.
+- [ ] Confirm the published Pages site after merging.
