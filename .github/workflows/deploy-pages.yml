@@ -31,7 +31,7 @@ jobs:
         run: |
           mkdir -p _site/assets/images
           cp index.html _site/index.html
-          cp assets/images/amrshah.jpg _site/assets/images/amrshah.jpg
+          cp assets/images/ali-raza-portrait.webp _site/assets/images/ali-raza-portrait.webp
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
